@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jobbara.Pages.Registro"
+             Title="Registro"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
+
+            <!-- icono-->
+            <Image 
+                Source="app_icon.png" 
+                HorizontalOptions="Center" 
+                HeightRequest="60" 
+                WidthRequest="60" />
+
+            <!-- sign up-->
+            <Label 
+                Text="Sign up to Jobbara" 
+                FontSize="24" 
+                FontAttributes="Bold" 
+                HorizontalOptions="Center" 
+                TextColor="Black" />
+
+            <!-- dqatos-->
+            <BoxView HeightRequest="20" Color="Transparent" />
+
+            <!-- Campos de texto -->
+            <Entry Placeholder="Name" Keyboard="Default" TextColor="Black" />
+            <Entry Placeholder="Email Address" Keyboard="Email" TextColor="Black" />
+            <Entry Placeholder="Password" IsPassword="True" TextColor="Black" />
+
+            <!-- sign up btn -->
+            <Button 
+                Text="Sign Up" 
+                BackgroundColor="#FF9B51" 
+                TextColor="White" 
+                CornerRadius="20"
+                HeightRequest="50"
+                FontAttributes="Bold" />
+
+            <HorizontalStackLayout VerticalOptions="Center" Spacing="10" HorizontalOptions="Center">
+                <Label Text="or" TextColor="#999999" FontAttributes="Bold" />
+            </HorizontalStackLayout>
+
+            <!-- sig up google -->
+            <Button 
+                Text="Sign up with Google" 
+                BackgroundColor="White" 
+                TextColor="Black"
+                BorderColor="#CCCCCC"
+                BorderWidth="1"
+                CornerRadius="20"
+                HeightRequest="50"
+                FontAttributes="Bold" 
+                />
+
+            <!-- espacio -->
+            <BoxView HeightRequest="20" Color="Transparent" />
+
+            <!-- por si ya tienes cuenta -->
+            <Label 
+            Text="Do you already have an account?" 
+            TextColor="#007AFF" 
+            HorizontalOptions="Center"
+            FontAttributes="Italic">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Tapped="OnLoginTapped"
+                    NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
