@@ -4,12 +4,21 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Jobbara"
+    xmlns:pages="clr-namespace:Jobbara.Pages"
     Shell.FlyoutBehavior="Disabled"
     Title="Jobbara">
 
     <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate pages:inicioSesion}"
+        Route="loginPage" />
+    <ShellContent
+        Title="SignUp"
+        ContentTemplate="{DataTemplate pages:Registro}"
+        Route="signPage" />
+    <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate pages:homePage}"
+        Route="HomePage" />
 
 </Shell>
