@@ -2,13 +2,13 @@ namespace Jobbara.Pages;
 
 public partial class homePage : ContentPage
 {
-	public homePage()
-	{
+    public homePage()
+    {
         InitializeComponent();
-	}
-	private async void OnGoToProfile(object sender, EventArgs e)
-	{
-		await Shell.Current.GoToAsync("//userProfile");
+    }
+    private async void OnGoToProfile(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//userProfile");
     }
 
     private async void GoToAjustes(object sender, EventArgs e)

@@ -42,11 +42,13 @@ public partial class userProfile : ContentPage
 
         foreach (var user in users)
         {
-            if (user.Object.availableWork && user.Object.office == "carpintero")
+
+            if (user.Object.isWorking && user.Object.office == "carpintero")
             {
                 await client
                     .Child("Users")
                     .Child(user.Key)
+
                     .Child("alertWork")
                     .PutAsync(true);
             }
@@ -56,7 +58,8 @@ public partial class userProfile : ContentPage
     public async Task OnListeningAlert()
     {
 
-        while(true)
+        while (true)
+
         {
             var users = await client
                 .Child("Users")
@@ -65,6 +68,7 @@ public partial class userProfile : ContentPage
             var userCurrent = users.FirstOrDefault(u => u.Object.username == UserSessionData.username_usd);
 
             if (userCurrent != null)
+
             {
                 var alertWork = userCurrent.Object.alertWork;
                 if (alertWork == true)
@@ -76,11 +80,6 @@ public partial class userProfile : ContentPage
             await Task.Delay(1000);
         }
     }
-
-
-
-
-    /// CODIGO QUE TODAVIA NO REVISO 
     private void MostrarDatosChambeador()
     {
         bool isWorker = Preferences.Get("IsWorker", false);
@@ -107,7 +106,7 @@ public partial class userProfile : ContentPage
 
     private async void OnBecomeWorkerClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("newChambeador");
+        await Shell.Current.GoToAsync("//newChambeador");
     }
     private void OnDeleteChambeadorData(object sender, EventArgs e)
     {

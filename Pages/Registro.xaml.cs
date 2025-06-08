@@ -8,9 +8,9 @@ public partial class Registro : ContentPage
 {
     FirebaseClient client = new FirebaseClient("https://jobbara-default-rtdb.firebaseio.com/");
     public Registro()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
     private async void OnLoginTapped(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//loginPage");
@@ -20,28 +20,27 @@ public partial class Registro : ContentPage
     {
         saveUserData();
     }
-
     private async void saveUserData()
     {
         string username = userNameTxt.Text?.Trim();
         string email = emailTxt.Text?.Trim();
         string password = passwordTxt.Text;
 
-        
+        // 1. Validaci�n b�sica
         if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
         {
             await DisplayAlert("Error", "Por favor, completa todos los campos.", "OK");
             return;
         }
 
-        
+        // 2. Validaci�n de correo electr�nico
         if (!IsValidEmail(email))
         {
             await DisplayAlert("Error", "El correo electronico no es valido.", "OK");
             return;
         }
 
-        
+        // 3. Validaci�n de contrase�a
         if (password.Length < 6)
         {
             await DisplayAlert("Error", "La contrasena debe tener al menos 6 caracteres.", "OK");
@@ -67,14 +66,14 @@ public partial class Registro : ContentPage
             username = usernameInTextBox,
             email = emailTxt.Text,
             password = passwordTxt.Text,
-            availableWork = false,
             isWorking = false,
             office = string.Empty,
             alertWork = false
         });
 
-        await DisplayAlert("Exito", "Usuario registrado correctamente.", "OK");
-        await Shell.Current.GoToAsync("//userProfile");
+        await DisplayAlert("�xito", "Usuario registrado correctamente.", "OK");
+
+        await Shell.Current.GoToAsync("//loginPage");
     }
     private bool IsValidEmail(string email)
     {

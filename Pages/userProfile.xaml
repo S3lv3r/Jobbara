@@ -7,46 +7,54 @@
              xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
              shell:Shell.NavBarIsVisible="False">
 
-    <Grid RowDefinitions="*,Auto">
+    <Grid>
+        <!-- CORRECTA DEFINICIÓN DE ROWS -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- Botón de regreso -->
+
+
         <!-- CONTENIDO PRINCIPAL -->
-        <Grid>
+        <Grid Grid.Row="0">
             <!-- Fondo superior decorativo -->
             <BoxView HeightRequest="200"
                      BackgroundColor="#FF9B51"
                      CornerRadius="0,0,200,200"
                      HorizontalOptions="Fill"
                      VerticalOptions="Start"/>
-
-            <!-- Botón de regreso -->
             <ImageButton Source="back.png"
-                         HorizontalOptions="Start"
-                         VerticalOptions="Start"
-                         Margin="10"
-                         WidthRequest="28"
-                         BackgroundColor="Transparent"/>
+HorizontalOptions="Start"
+VerticalOptions="Start"
+Clicked="OnGoToHome"
+Margin="10"
+WidthRequest="28"
+HeightRequest="28"
+BackgroundColor="#FF9B51"/>
+            <!-- Notificaciones -->
             <ImageButton Source="bell.png"
-             WidthRequest="28" HeightRequest="28"
-             BackgroundColor="Transparent"
-                         VerticalOptions="Start"
-                         Margin="0,15,10,0"
-                         HorizontalOptions="End"/>
+WidthRequest="28" HeightRequest="28"
+BackgroundColor="Transparent"
+Clicked="OnGoToNot"
+VerticalOptions="Start"
+Margin="0,15,10,0"
+HorizontalOptions="End"/>
 
-            <ScrollView>
-                <VerticalStackLayout Padding="20" Spacing="20">
+            <ScrollView Margin="0,50,0,0">
+                <VerticalStackLayout Margin="0,0,0,0" Padding="20" Spacing="20" >
 
-                    <!-- Espaciado para el medio círculo -->
-                    <BoxView HeightRequest="100" BackgroundColor="Transparent"/>
+                    <BoxView HeightRequest="40" Margin="0,40,0,0" BackgroundColor="Transparent"/>
 
-                    <!-- Nombre del usuario -->
                     <Label Text="UserName"
                            FontSize="32"
                            FontAttributes="Bold"
                            TextColor="White"
                            HorizontalOptions="Center"
                            Margin="0,-60,0,0"
-                           x:Name="usernameLbl"/>
+                           x:Name="usernameLbl"
+                           BackgroundColor="Transparent"/>
 
-                    <!-- Imagen de perfil -->
                     <Frame WidthRequest="150"
                            HeightRequest="150"
                            CornerRadius="75"
@@ -60,8 +68,6 @@
                         <Image Source="profile_default.png"
                                Aspect="AspectFill"/>
                     </Frame>
-
-                    <!-- Datos del usuario -->
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Dato 1" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
                         <Label Text="Dato 2" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
@@ -123,11 +129,11 @@
         </Grid>
 
         <!-- BARRA DE NAVEGACIÓN INFERIOR -->
-        <Grid Grid.Row="2"
-       BackgroundColor="#F0F0F0"
-       Padding="10"
-       HeightRequest="70"
-       ColumnSpacing="30">
+        <Grid Grid.Row="1"
+              BackgroundColor="#F0F0F0"
+              Padding="10"
+              HeightRequest="70"
+              ColumnSpacing="30">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -135,58 +141,58 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Botón: Inicio -->
+            <!-- Botón: Ajustes -->
             <ImageButton
              BackgroundColor="Transparent"
              Grid.Column="0"
              HorizontalOptions="Center"
              VerticalOptions="Center"
-         WidthRequest="40"
-         Source="settings.png"
+             Clicked="GoToAjustes"
+             WidthRequest="40"
+             Source="settings.png"
              Margin="0,-20,0,0"/>
             <Label Text="Ajustes" TextColor="DarkOrange" FontAttributes="Bold"
-Grid.Column="0"
-HorizontalOptions="Center"
-VerticalOptions="Center"
-Margin="0,34,0,0"
-FontSize="12"/>
+                   Grid.Column="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,34,0,0"
+                   FontSize="12"/>
 
             <!-- Botón central grande -->
             <Frame HeightRequest="80"
-            WidthRequest="80"
-            CornerRadius="40"
-            BackgroundColor="#FF9B51"
-            Padding="0"
-            HasShadow="True"
-            BorderColor="#E65100"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Grid.Column="1"
-            Margin="0,-30,0,0"
-            >
-                <!-- 🧠 Flota encima del frame -->
+                   WidthRequest="80"
+                   CornerRadius="40"
+                   BackgroundColor="#FF9B51"
+                   Padding="0"
+                   HasShadow="True"
+                   BorderColor="#E65100"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1"
+                   Margin="0,-30,0,0">
                 <ImageButton Source="plus.png"
-                      BackgroundColor="Transparent"
-                      Aspect="AspectFit"
-                      Padding="0"
-                      Clicked="CreateAWorkNotificationClicked"/>
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFit"
+                             Padding="0"
+                             Clicked="CreateAWorkNotificationClicked"/>
             </Frame>
 
-            <!-- Botón: Ajustes -->
+            <!-- Botón: Pagos -->
             <ImageButton
              BackgroundColor="Transparent"
              Grid.Column="2"
              HorizontalOptions="Center"
              VerticalOptions="Center"
              Margin="0,-16,0,0"
-         Source="money.png"
-         WidthRequest="47"/>
+             Source="money.png"
+             Clicked="GoToPagos"
+             WidthRequest="47"/>
             <Label Text="Pagos" TextColor="DarkOrange" FontAttributes="Bold"
-            Grid.Column="2"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Margin="0,34,0,0"
-            FontSize="12"/>
+                   Grid.Column="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,34,0,0"
+                   FontSize="12"/>
         </Grid>
     </Grid>
 </ContentPage>
