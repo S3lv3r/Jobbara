@@ -8,9 +8,9 @@ public partial class inicioSesion : ContentPage
 {
     FirebaseClient client = new FirebaseClient("https://jobbara-default-rtdb.firebaseio.com/");
     public inicioSesion()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
     private async void OnLogin(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//signPage");
@@ -29,8 +29,8 @@ public partial class inicioSesion : ContentPage
 
         if (string.IsNullOrWhiteSpace(emailInTextBox) || string.IsNullOrWhiteSpace(passwordInTextBox))
         {
-        await DisplayAlert("Error", "Por favor, completa ambos campos.", "OK");
-        return;
+            await DisplayAlert("Error", "Por favor, completa ambos campos.", "OK");
+            return;
         }
 
         var usersDB = await client
@@ -56,6 +56,6 @@ public partial class inicioSesion : ContentPage
         UserSessionData.password_usd = matchingEmail.Object.password;
 
         await DisplayAlert("Exito", "Inicio de sesion correctamente.", "OK");
-        await Shell.Current.GoToAsync("//userProfile");
+        await Shell.Current.GoToAsync("//homePage");
     }
 }

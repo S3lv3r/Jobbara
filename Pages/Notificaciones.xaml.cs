@@ -2,9 +2,9 @@ namespace Jobbara.Pages;
 
 public partial class Notificaciones : ContentPage
 {
-	public Notificaciones()
-	{
-		InitializeComponent();
+    public Notificaciones()
+    {
+        InitializeComponent();
 
         var lista = new List<Notificacion>
         {
@@ -15,17 +15,17 @@ public partial class Notificaciones : ContentPage
 
         NotificacionesCollection.ItemsSource = lista;
     }
-	private async void OnGoToHome(object sender, EventArgs e)
-	{
-		await Shell.Current.GoToAsync("//homePage");
-	}
-	private async void GoToAjustes(object sender, EventArgs e)
-	{
-		await Shell.Current.GoToAsync("//ajustes");
-	}
-	private async void GoToPagos(object sender, EventArgs e)
-	{
-		await Shell.Current.GoToAsync("//pagos");
+    private async void OnGoToHome(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//homePage");
+    }
+    private async void GoToAjustes(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//ajustes");
+    }
+    private async void GoToPagos(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//pagos");
     }
     public class Notificacion
     {

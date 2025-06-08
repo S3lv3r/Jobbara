@@ -25,7 +25,6 @@
         ContentTemplate="{DataTemplate pages:Registro}"
         Route="signPage" />
     <ShellContent
-<<<<<<< HEAD
 Title="Home"
 ContentTemplate="{DataTemplate pages:homePage}"
 Route="homePage" />
@@ -34,11 +33,6 @@ Route="homePage" />
     <ShellContent Title="Pagos" Route="pagos" ContentTemplate="{DataTemplate pages:Pagos}" />
     <ShellContent Title="Notificaciones" Route="notificaciones" ContentTemplate="{DataTemplate pages:Notificaciones}"/>
 
-=======
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:homePage}"
-        Route="homePage" /> 
->>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
 
 
 </Shell>
