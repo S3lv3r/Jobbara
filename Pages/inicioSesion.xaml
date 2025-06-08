@@ -6,6 +6,7 @@
              shell:Shell.NavBarIsVisible="False"
              Title="inicioSesion"
              BackgroundColor="White">
+<<<<<<< HEAD
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Start">
 
@@ -75,4 +76,84 @@
 
         </VerticalStackLayout>
     </ScrollView>
+=======
+    <Grid>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="30" Spacing="25">
+
+                <!-- icono-->
+                <Image Source="app_icon.png"
+                       HorizontalOptions="Center"
+                       HeightRequest="80"
+                       WidthRequest="80" />
+
+                <!-- log in anuncio-->
+                <Label Text="Welcome to Jobbara"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#333333" />
+
+                <!-- espacio -->
+                <BoxView HeightRequest="20" Color="Transparent" />
+
+                <!-- datos con bordes redondeados -->
+                <Frame CornerRadius="12" Padding="5" BackgroundColor="#f4f4f5">
+                    <Entry Placeholder="Email Address"
+                           Keyboard="Email"
+                           TextColor="Black"
+                           x:Name="emailTxt"
+                           BackgroundColor="#F5F5F5" />
+                </Frame>
+
+                <Frame CornerRadius="12" Padding="5" BackgroundColor="#f4f4f5">
+                    <Entry Placeholder="Password"
+                           IsPassword="True"
+                           TextColor="Black"
+                           x:Name="passwordTxt"
+                           BackgroundColor="#F5F5F5" />
+                </Frame>
+
+                <!-- log in btn -->
+                <Button Text="Log In"
+                        BackgroundColor="#FF7043"
+                        TextColor="White"
+                        CornerRadius="25"
+                        HeightRequest="55"
+                        FontAttributes="Bold"
+                        Clicked="LoginUserDB_Cliked"
+                        Padding="10" />
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Label Text="or" TextColor="#999999" FontAttributes="Bold" />
+                </HorizontalStackLayout>
+
+                <!-- iniciar con google -->
+                <Button Text="Log In with Google"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        BorderColor="#CCCCCC"
+                        BorderWidth="1"
+                        CornerRadius="25"
+                        HeightRequest="55"
+                        FontAttributes="Bold" />
+
+                <!-- espacio extra -->
+                <BoxView HeightRequest="20" Color="Transparent" />
+
+                <!-- por si no tienes cuenta -->
+                <Label Text="Don't have an account yet? Sign up here!"
+                       TextColor="#007AFF"
+                       HorizontalOptions="Center"
+                       FontAttributes="Italic">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLogin" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+>>>>>>> 50b5b32 (Primer commit bro)
 </ContentPage>

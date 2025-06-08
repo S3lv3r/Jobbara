@@ -5,6 +5,7 @@
              shell:Shell.NavBarIsVisible="False"
              x:Class="Jobbara.Pages.homePage"
              Title="homePage">
+<<<<<<< HEAD
 
     <VerticalStackLayout
         VerticalOptions="FillAndExpand"
@@ -20,3 +21,159 @@
 
     </VerticalStackLayout>
 </ContentPage>
+=======
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FFA05A" Offset="0.4"/>
+            <!-- Naranja arriba -->
+            <GradientStop Color="#F0F0F0" Offset="1.0"/>
+            <!-- Blanco abajo -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- 🧠 Barra abajo ocupa fila nueva -->
+
+        <!-- 🧢 Header -->
+        <Grid ColumnDefinitions="Auto,*,Auto" Row="0" Padding="20">
+            <Image Source="usuario.png" WidthRequest="40" HeightRequest="40" 
+                   Aspect="AspectFill"
+                   VerticalOptions="Center"
+                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+
+            <Label Grid.Column="1" Text="MiNombre" VerticalOptions="Center"
+                   FontAttributes="Bold" FontSize="24" Margin="10,0"/>
+
+            <ImageButton Grid.Column="2" Source="bell.png"
+                         WidthRequest="28" HeightRequest="28"
+                         BackgroundColor="Transparent"/>
+        </Grid>
+
+        <!-- 📦 Recuadro blanco con reseñas -->
+        <Frame Grid.Row="1"
+               CornerRadius="20"
+               BackgroundColor="White"
+               Padding="15"
+               HasShadow="True"
+               Margin="30,30,30,30">
+
+            <ScrollView>
+                <VerticalStackLayout Spacing="10">
+
+                    <!-- Label Recientes -->
+                    <HorizontalStackLayout Spacing="6">
+                        <Image Source="reloj.png" WidthRequest="16" HeightRequest="16"/>
+                        <Label Text="Recientes" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                    </HorizontalStackLayout>
+
+                    <!-- Reseña 1 -->
+                    <Frame BackgroundColor="#EEEEEE" CornerRadius="12" Padding="10" HasShadow="False">
+                        <Grid ColumnDefinitions="Auto,*">
+                            <Image Source="aqui_va_algo1.png" WidthRequest="40" HeightRequest="40"
+                                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+
+                            <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                                <Label Text="Juan Pérez" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                <Label Text="¡Excelente atención!" FontSize="13" TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Reseña 2 -->
+                    <Frame BackgroundColor="#EEEEEE" CornerRadius="12" Padding="10" HasShadow="False">
+                        <Grid ColumnDefinitions="Auto,*">
+                            <Image Source="aqui_va_algo2.png" WidthRequest="40" HeightRequest="40"
+                                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+
+                            <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                                <Label Text="Ana Gómez" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                <Label Text="Muy recomendable." FontSize="13" TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Reseña 3 -->
+                    <Frame BackgroundColor="#EEEEEE" CornerRadius="12" Padding="10" HasShadow="False">
+                        <Grid ColumnDefinitions="Auto,*">
+                            <Image Source="aqui_va_algo3.png" WidthRequest="40" HeightRequest="40"
+                                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+
+                            <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                                <Label Text="Carlos Rivera" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                <Label Text="Volveré sin duda." FontSize="13" TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Frame>
+
+        <!-- 🔽 BARRA DE NAVEGACIÓN INFERIOR -->
+        <Grid Grid.Row="2"
+              BackgroundColor="#F0F0F0"
+              Padding="10"
+              HeightRequest="70"
+              ColumnSpacing="30">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Botón: Inicio -->
+            <ImageButton
+                    BackgroundColor="Transparent"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                WidthRequest="40"
+                Source="settings.png"
+                    Margin="0,-20,0,0"/>
+            <Label Text="Ajustes" TextColor="DarkOrange" FontAttributes="Bold"
+       Grid.Column="0"
+       HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Margin="0,34,0,0"
+       FontSize="12"/>
+
+            <!-- Botón central grande -->
+            <Frame HeightRequest="80"
+                   WidthRequest="80"
+                   CornerRadius="40"
+                   BackgroundColor="#FF9B51"
+                   Padding="0"
+                   HasShadow="True"
+                   BorderColor="#E65100"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1"
+                   Margin="0,-30,0,0">
+                <!-- 🧠 Flota encima del frame -->
+                <ImageButton Source="plus.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFit"
+                             Padding="0"/>
+            </Frame>
+
+            <!-- Botón: Ajustes -->
+            <ImageButton
+                    BackgroundColor="Transparent"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="0,-16,0,0"
+                Source="money.png"
+                WidthRequest="47"/>
+            <Label Text="Pagos" TextColor="DarkOrange" FontAttributes="Bold"
+                   Grid.Column="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,34,0,0"
+                   FontSize="12"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>
+>>>>>>> 50b5b32 (Primer commit bro)

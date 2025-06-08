@@ -17,6 +17,10 @@ namespace Jobbara
 
 #if DEBUG
     		builder.Logging.AddDebug();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 50b5b32 (Primer commit bro)
 #endif
 
             return builder.Build();

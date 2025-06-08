@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jobbara.Pages.newChambeador"
+             Title="newChambeador"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Conviértete en Chambeador" FontSize="26" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
+
+            <!-- Campos -->
+            <Entry Placeholder="Oficio" x:Name="JobEntry" TextColor="Black"/>
+            <Entry Placeholder="INE" x:Name="IneEntry" TextColor="Black"/>
+            <Entry Placeholder="CURP" x:Name="CurpEntry" TextColor="Black" />
+            <Entry Placeholder="Comprobante de domicilio" x:Name="AddressEntry" TextColor="Black"/>
+            <Entry Placeholder="RFC" x:Name="RfcEntry" TextColor="Black"/>
+
+            <!-- Check de Términos -->
+            <HorizontalStackLayout VerticalOptions="Center">
+                <CheckBox x:Name="TermsCheck" Color="#FF7043"/>
+
+                <Label Text="Acepto los Términos y Condiciones de Jobbara"
+           FontSize="14"
+           VerticalOptions="Center"
+                       TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTermsTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+            <!-- Botón para mostrar/ocultar términos -->
+            <Button Text="Ver Términos y Condiciones ↓" 
+                    x:Name="ToggleTermsButton"
+                    Clicked="OnToggleTermsClicked"
+                    FontSize="14"
+                    BackgroundColor="Transparent"
+                    TextColor="Gray"
+                    HorizontalOptions="Start"/>
+
+            <!-- Texto oculto -->
+            <Label x:Name="TermsText"
+                   Text="¡Lee bien, amigazo, que esto no es broma! (Bueno, sí un poco, pero es oficial).
+
+Aceptas convertirte en un Chambeador Capybara certificado, con todo el flow y la responsabilidad que eso implica.
+O sea, ya no eres un humano cualquiera, ahora tienes la dignidad y el estilo de un capybara que sabe chambear duro.
+
+En caso de que un Dios Capybara se manifieste en tu vida, estás en la obligación moral, espiritual y social de adorarlo, respetarlo, y seguir sus sabias enseñanzas.
+No aceptamos excusas ni 'es que no me avisaron'. Es ley sagrada capybaril.
+
+Aceptas que tus datos serán usados para que podamos contactarte, enviarte memes exclusivos y, obviamente, verificar que no seas un robot intentando robar bananas.
+
+No nos hacemos responsables si empiezas a tener sueños extraños con capybaras bailando salsa, o si desarrollas una obsesión repentina por bañarte en el río.
+
+Si decides demandarnos por cualquier motivo, primero deberás hacer una danza ritual capybaril para invocar la buena suerte.
+Spoiler: eso no garantiza que ganes, pero por lo menos la pasarás chido.
+
+Aceptas que si incumples alguno de estos términos, podríamos enviarte un ejército de capybaras enojadas para recordarte que esto es en serio.
+Y créenos, no quieres ver a un capybara enfurecido. Son tiernos pero peligrosos.
+
+Finalmente, aceptas que Jobbara no se hace responsable por daños colaterales derivados de una vida plena, exitosa y llena de bananas.
+¡Disfruta el camino, vaquero!"
+                   IsVisible="False"
+                   FontSize="12"
+                   TextColor="Gray"
+                   LineBreakMode="WordWrap"/>
+
+            <!-- Botón para solo guardar -->
+            <Button Text="Guardar datos"
+        BackgroundColor="#FF7043"
+        TextColor="White"
+        Clicked="OnSaveClicked"
+        Margin="0,20,0,0"/>
+
+            <!-- Botón de Confirmar y regresar -->
+            <Button Text="Confirmar y volver al perfil"
+        BackgroundColor="#FF9B51"
+        TextColor="White"
+        Clicked="OnConfirmClicked"
+        Margin="0,10,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
