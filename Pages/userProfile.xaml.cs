@@ -8,6 +8,7 @@ namespace Jobbara.Pages;
 
 public partial class userProfile : ContentPage
 {
+<<<<<<< HEAD
     private async void OnGoToHome(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//homePage");
@@ -16,6 +17,8 @@ public partial class userProfile : ContentPage
     {
         await Shell.Current.GoToAsync("//notificaciones");
     }
+=======
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
     public userProfile()
     {
         InitializeComponent();
@@ -33,7 +36,11 @@ public partial class userProfile : ContentPage
 
         usernameLbl.Text = UserSessionData.username_usd;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
     FirebaseClient client = new FirebaseClient("https://jobbara-default-rtdb.firebaseio.com/"); // Referencia a la base de datos
     private async void CreateAWorkNotificationClicked(object sender, EventArgs e)
     {
@@ -43,12 +50,20 @@ public partial class userProfile : ContentPage
 
         foreach (var user in users)
         {
+<<<<<<< HEAD
             if (user.Object.isWorker && user.Object.office == "carpintero")
+=======
+            if(user.Object.isWorker && user.Object.office == "carpintero")
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
             {
                 await client
                     .Child("Users")
                     .Child(user.Key)
+<<<<<<< HEAD
                     .Child("alertWork")
+=======
+                    .Child("alertWork") 
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                     .PutAsync(true);
             }
         }
@@ -56,7 +71,11 @@ public partial class userProfile : ContentPage
 
     public async Task OnListeningAlert()
     {
+<<<<<<< HEAD
         while (true)
+=======
+        while(true)
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
         {
             var users = await client
                 .Child("Users")
@@ -64,7 +83,11 @@ public partial class userProfile : ContentPage
 
             var userCurrent = users.FirstOrDefault(u => u.Object.username == UserSessionData.username_usd);
 
+<<<<<<< HEAD
             if (userCurrent != null)
+=======
+            if(userCurrent != null)
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
             {
                 var alertWork = userCurrent.Object.alertWork;
                 if (alertWork == true)
@@ -73,7 +96,11 @@ public partial class userProfile : ContentPage
                 }
             }
 
+<<<<<<< HEAD
             await Task.Delay(1000);
+=======
+            await Task.Delay(1000); 
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
         }
     }
     private void MostrarDatosChambeador()
@@ -102,7 +129,11 @@ public partial class userProfile : ContentPage
 
     private async void OnBecomeWorkerClicked(object sender, EventArgs e)
     {
+<<<<<<< HEAD
         await Shell.Current.GoToAsync("//newChambeador");
+=======
+        await Shell.Current.GoToAsync("newChambeador");
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
     }
     private void OnDeleteChambeadorData(object sender, EventArgs e)
     {
@@ -116,6 +147,7 @@ public partial class userProfile : ContentPage
         MostrarDatosChambeador();
     }
 
+<<<<<<< HEAD
     private async void GoToAjustes(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//ajustes");
@@ -126,3 +158,6 @@ public partial class userProfile : ContentPage
         await Shell.Current.GoToAsync("//pagos");
     }
 }
+=======
+}
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3

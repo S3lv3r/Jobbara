@@ -7,6 +7,7 @@
              xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
              shell:Shell.NavBarIsVisible="False">
 
+<<<<<<< HEAD
     <Grid>
         <!-- CORRECTA DEFINICIÓN DE ROWS -->
         <Grid.RowDefinitions>
@@ -18,12 +19,18 @@
 
         <!-- CONTENIDO PRINCIPAL -->
         <Grid Grid.Row="0">
+=======
+    <Grid RowDefinitions="*,Auto">
+        <!-- CONTENIDO PRINCIPAL -->
+        <Grid>
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
             <!-- Fondo superior decorativo -->
             <BoxView HeightRequest="200"
                      BackgroundColor="#FF9B51"
                      CornerRadius="0,0,200,200"
                      HorizontalOptions="Fill"
                      VerticalOptions="Start"/>
+<<<<<<< HEAD
             <ImageButton Source="back.png"
 HorizontalOptions="Start"
 VerticalOptions="Start"
@@ -46,15 +53,45 @@ HorizontalOptions="End"/>
 
                     <BoxView HeightRequest="40" Margin="0,40,0,0" BackgroundColor="Transparent"/>
 
+=======
+
+            <!-- Botón de regreso -->
+            <ImageButton Source="back.png"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Start"
+                         Margin="10"
+                         WidthRequest="28"
+                         BackgroundColor="Transparent"/>
+            <ImageButton Source="bell.png"
+             WidthRequest="28" HeightRequest="28"
+             BackgroundColor="Transparent"
+                         VerticalOptions="Start"
+                         Margin="0,15,10,0"
+                         HorizontalOptions="End"/>
+
+            <ScrollView>
+                <VerticalStackLayout Padding="20" Spacing="20">
+
+                    <!-- Espaciado para el medio círculo -->
+                    <BoxView HeightRequest="100" BackgroundColor="Transparent"/>
+
+                    <!-- Nombre del usuario -->
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                     <Label Text="UserName"
                            FontSize="32"
                            FontAttributes="Bold"
                            TextColor="White"
                            HorizontalOptions="Center"
                            Margin="0,-60,0,0"
+<<<<<<< HEAD
                            x:Name="usernameLbl"
                            BackgroundColor="Transparent"/>
 
+=======
+                           x:Name="usernameLbl"/>
+
+                    <!-- Imagen de perfil -->
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                     <Frame WidthRequest="150"
                            HeightRequest="150"
                            CornerRadius="75"
@@ -69,6 +106,10 @@ HorizontalOptions="End"/>
                                Aspect="AspectFill"/>
                     </Frame>
 
+<<<<<<< HEAD
+=======
+                    <!-- Datos del usuario -->
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Dato 1" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
                         <Label Text="Dato 2" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
@@ -130,11 +171,19 @@ HorizontalOptions="End"/>
         </Grid>
 
         <!-- BARRA DE NAVEGACIÓN INFERIOR -->
+<<<<<<< HEAD
         <Grid Grid.Row="1"
               BackgroundColor="#F0F0F0"
               Padding="10"
               HeightRequest="70"
               ColumnSpacing="30">
+=======
+        <Grid Grid.Row="2"
+       BackgroundColor="#F0F0F0"
+       Padding="10"
+       HeightRequest="70"
+       ColumnSpacing="30">
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -142,12 +191,17 @@ HorizontalOptions="End"/>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+<<<<<<< HEAD
             <!-- Botón: Ajustes -->
+=======
+            <!-- Botón: Inicio -->
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
             <ImageButton
              BackgroundColor="Transparent"
              Grid.Column="0"
              HorizontalOptions="Center"
              VerticalOptions="Center"
+<<<<<<< HEAD
              Clicked="GoToAjustes"
              WidthRequest="40"
              Source="settings.png"
@@ -179,12 +233,47 @@ HorizontalOptions="End"/>
             </Frame>
 
             <!-- Botón: Pagos -->
+=======
+         WidthRequest="40"
+         Source="settings.png"
+             Margin="0,-20,0,0"/>
+            <Label Text="Ajustes" TextColor="DarkOrange" FontAttributes="Bold"
+Grid.Column="0"
+HorizontalOptions="Center"
+VerticalOptions="Center"
+Margin="0,34,0,0"
+FontSize="12"/>
+
+            <!-- Botón central grande -->
+            <Frame HeightRequest="80"
+            WidthRequest="80"
+            CornerRadius="40"
+            BackgroundColor="#FF9B51"
+            Padding="0"
+            HasShadow="True"
+            BorderColor="#E65100"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Grid.Column="1"
+            Margin="0,-30,0,0"
+            >
+                <!-- 🧠 Flota encima del frame -->
+                <ImageButton Source="plus.png"
+                      BackgroundColor="Transparent"
+                      Aspect="AspectFit"
+                      Padding="0"
+                      Clicked="CreateAWorkNotificationClicked"/>
+            </Frame>
+
+            <!-- Botón: Ajustes -->
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
             <ImageButton
              BackgroundColor="Transparent"
              Grid.Column="2"
              HorizontalOptions="Center"
              VerticalOptions="Center"
              Margin="0,-16,0,0"
+<<<<<<< HEAD
              Source="money.png"
              Clicked="GoToPagos"
              WidthRequest="47"/>
@@ -197,3 +286,16 @@ HorizontalOptions="End"/>
         </Grid>
     </Grid>
 </ContentPage>
+=======
+         Source="money.png"
+         WidthRequest="47"/>
+            <Label Text="Pagos" TextColor="DarkOrange" FontAttributes="Bold"
+            Grid.Column="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="0,34,0,0"
+            FontSize="12"/>
+        </Grid>
+    </Grid>
+</ContentPage>
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3

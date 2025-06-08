@@ -19,6 +19,7 @@
 
         <!-- 🧢 Header -->
         <Grid ColumnDefinitions="Auto,*,Auto" Row="0" Padding="20">
+<<<<<<< HEAD
             <ImageButton Source="usuario.png" WidthRequest="40" HeightRequest="40"
            Aspect="AspectFill"
            VerticalOptions="Center"
@@ -38,6 +39,21 @@
         </Grid>
 
 
+=======
+            <Image Source="usuario.png" WidthRequest="40" HeightRequest="40" 
+                   Aspect="AspectFill"
+                   VerticalOptions="Center"
+                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+
+            <Label Grid.Column="1" Text="MiNombre" VerticalOptions="Center"
+                   FontAttributes="Bold" FontSize="24" Margin="10,0"/>
+
+            <ImageButton Grid.Column="2" Source="bell.png"
+                         WidthRequest="28" HeightRequest="28"
+                         BackgroundColor="Transparent"/>
+        </Grid>
+
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
         <!-- 📦 Recuadro blanco con reseñas -->
         <Frame Grid.Row="1"
                CornerRadius="20"
@@ -58,6 +74,7 @@
                     <!-- Reseña 1 -->
                     <Frame BackgroundColor="#EEEEEE" CornerRadius="12" Padding="10" HasShadow="False">
                         <Grid ColumnDefinitions="Auto,*">
+<<<<<<< HEAD
                             <Image Source="aqui_va_algo3.png" WidthRequest="40" HeightRequest="40">
                                 <Image.Clip>
                                     <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
@@ -67,6 +84,14 @@
                             <VerticalStackLayout Grid.Column="1" Margin="10,0">
                                 <Label Text="Carlos Rivera" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
                                 <Label Text="Volveré sin duda." FontSize="13" TextColor="Gray"/>
+=======
+                            <Image Source="aqui_va_algo1.png" WidthRequest="40" HeightRequest="40"
+                                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+
+                            <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                                <Label Text="Juan Pérez" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                <Label Text="¡Excelente atención!" FontSize="13" TextColor="Gray"/>
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                             </VerticalStackLayout>
                         </Grid>
                     </Frame>
@@ -74,6 +99,7 @@
                     <!-- Reseña 2 -->
                     <Frame BackgroundColor="#EEEEEE" CornerRadius="12" Padding="10" HasShadow="False">
                         <Grid ColumnDefinitions="Auto,*">
+<<<<<<< HEAD
                             <Image Source="aqui_va_algo3.png" WidthRequest="40" HeightRequest="40">
                                 <Image.Clip>
                                     <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
@@ -83,10 +109,19 @@
                             <VerticalStackLayout Grid.Column="1" Margin="10,0">
                                 <Label Text="Carlos Rivera" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
                                 <Label Text="Volveré sin duda." FontSize="13" TextColor="Gray"/>
+=======
+                            <Image Source="aqui_va_algo2.png" WidthRequest="40" HeightRequest="40"
+                                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+
+                            <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                                <Label Text="Ana Gómez" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                <Label Text="Muy recomendable." FontSize="13" TextColor="Gray"/>
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                             </VerticalStackLayout>
                         </Grid>
                     </Frame>
 
+<<<<<<< HEAD
 
                     <!-- Reseña 3 -->
                     <Frame BackgroundColor="#EEEEEE" CornerRadius="12" Padding="10" HasShadow="False">
@@ -96,6 +131,13 @@
                                     <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
                                 </Image.Clip>
                             </Image>
+=======
+                    <!-- Reseña 3 -->
+                    <Frame BackgroundColor="#EEEEEE" CornerRadius="12" Padding="10" HasShadow="False">
+                        <Grid ColumnDefinitions="Auto,*">
+                            <Image Source="aqui_va_algo3.png" WidthRequest="40" HeightRequest="40"
+                                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
 
                             <VerticalStackLayout Grid.Column="1" Margin="10,0">
                                 <Label Text="Carlos Rivera" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
@@ -104,7 +146,10 @@
                         </Grid>
                     </Frame>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                 </VerticalStackLayout>
             </ScrollView>
         </Frame>
@@ -130,7 +175,10 @@
                     VerticalOptions="Center"
                 WidthRequest="40"
                 Source="settings.png"
+<<<<<<< HEAD
                 Clicked="GoToAjustes"
+=======
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                     Margin="0,-20,0,0"/>
             <Label Text="Ajustes" TextColor="DarkOrange" FontAttributes="Bold"
        Grid.Column="0"
@@ -165,7 +213,10 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Margin="0,-16,0,0"
+<<<<<<< HEAD
                 Clicked="GoToPagos"
+=======
+>>>>>>> 142eef0d389d5f4b6554b01b49634745e9e07cc3
                 Source="money.png"
                 WidthRequest="47"/>
             <Label Text="Pagos" TextColor="DarkOrange" FontAttributes="Bold"
