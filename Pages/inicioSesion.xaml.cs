@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 using System.Text.RegularExpressions;
->>>>>>> 50b5b32 (Primer commit bro)
 using Firebase.Database;
 using Firebase.Database.Query;
 using Jobbara.Models;
@@ -26,13 +23,11 @@ public partial class inicioSesion : ContentPage
 
     private async void VerifyUser()
     {
-<<<<<<< HEAD
         var emailInTextBox = emailTxt.Text;
         var passwordInTextBox = passwordTxt.Text;
 
-=======
-        string emailInTextBox = emailTxt.Text?.Trim();
-        string passwordInTextBox = passwordTxt.Text;
+        string emailInTextBox2 = emailTxt.Text?.Trim();
+        string passwordInTextBox2 = passwordTxt.Text;
         if (string.IsNullOrWhiteSpace(emailInTextBox) || string.IsNullOrWhiteSpace(passwordInTextBox))
         {
         await DisplayAlert("Error", "Por favor, completa ambos campos.", "OK");
@@ -40,15 +35,14 @@ public partial class inicioSesion : ContentPage
         }
         if (passwordInTextBox.Length < 6)
         {
-            await DisplayAlert("Error", "La contraseña debe tener al menos 6 caracteres.", "OK");
+            await DisplayAlert("Error", "La contraseï¿½a debe tener al menos 6 caracteres.", "OK");
             return;
         }
         if (!IsValidEmail(emailInTextBox))
         {
-            await DisplayAlert("Error", "El correo electrónico no es válido.", "OK");
+            await DisplayAlert("Error", "El correo electrï¿½nico no es vï¿½lido.", "OK");
             return;
         }
->>>>>>> 50b5b32 (Primer commit bro)
         var usersDB = await client
             .Child("Users")
             .OnceAsync<usersModel>();
@@ -63,14 +57,11 @@ public partial class inicioSesion : ContentPage
 
         if (matchingEmail.Object.password != passwordInTextBox)
         {
-            await DisplayAlert("Error", "Contraseña incorrecta.", "OK");
+            await DisplayAlert("Error", "Contraseï¿½a incorrecta.", "OK");
             return;
         }
 
-        await DisplayAlert("Éxito", "Inicio de sesion correctamente.", "OK");
-<<<<<<< HEAD
-        await Shell.Current.GoToAsync("//HomePage");
-=======
+        await DisplayAlert("ï¿½xito", "Inicio de sesion correctamente.", "OK");
         await Shell.Current.GoToAsync("//userProfile");
     }
     private bool IsValidEmail(string email)
@@ -80,6 +71,5 @@ public partial class inicioSesion : ContentPage
 
         string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
         return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
->>>>>>> 50b5b32 (Primer commit bro)
     }
 }

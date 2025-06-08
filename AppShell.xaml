@@ -7,13 +7,6 @@
     xmlns:pages="clr-namespace:Jobbara.Pages"
     Shell.FlyoutBehavior="Disabled"
     Title="Jobbara">
-<<<<<<< HEAD
-
-    <ShellContent
-        Title="Login"
-        ContentTemplate="{DataTemplate pages:inicioSesion}"
-        Route="loginPage" />
-=======
     
     <ShellContent
     Title="Login"
@@ -27,21 +20,14 @@
          Title="newChambeador"
         Route="newChambeador" 
         ContentTemplate="{DataTemplate pages:newChambeador}" />
->>>>>>> 50b5b32 (Primer commit bro)
     <ShellContent
         Title="SignUp"
         ContentTemplate="{DataTemplate pages:Registro}"
         Route="signPage" />
     <ShellContent
-<<<<<<< HEAD
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:homePage}"
-        Route="HomePage" />
-=======
 Title="Home"
 ContentTemplate="{DataTemplate pages:homePage}"
 Route="homePage" />
 
->>>>>>> 50b5b32 (Primer commit bro)
 
 </Shell>
