@@ -8,6 +8,14 @@ namespace Jobbara.Pages;
 
 public partial class userProfile : ContentPage
 {
+    private async void OnGoToHome(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//homePage");
+    }
+    private async void OnGoToNot(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//notificaciones");
+    }
     public userProfile()
     {
         InitializeComponent();
@@ -25,7 +33,6 @@ public partial class userProfile : ContentPage
 
         usernameLbl.Text = UserSessionData.username_usd;
     }
-    
     FirebaseClient client = new FirebaseClient("https://jobbara-default-rtdb.firebaseio.com/"); // Referencia a la base de datos
     private async void CreateAWorkNotificationClicked(object sender, EventArgs e)
     {
@@ -35,12 +42,12 @@ public partial class userProfile : ContentPage
 
         foreach (var user in users)
         {
-            if(user.Object.availableWork && user.Object.office == "carpintero")
+            if (user.Object.availableWork && user.Object.office == "carpintero")
             {
                 await client
                     .Child("Users")
                     .Child(user.Key)
-                    .Child("alertWork") 
+                    .Child("alertWork")
                     .PutAsync(true);
             }
         }
@@ -48,6 +55,7 @@ public partial class userProfile : ContentPage
 
     public async Task OnListeningAlert()
     {
+
         while(true)
         {
             var users = await client
@@ -56,7 +64,7 @@ public partial class userProfile : ContentPage
 
             var userCurrent = users.FirstOrDefault(u => u.Object.username == UserSessionData.username_usd);
 
-            if(userCurrent != null)
+            if (userCurrent != null)
             {
                 var alertWork = userCurrent.Object.alertWork;
                 if (alertWork == true)
@@ -65,7 +73,7 @@ public partial class userProfile : ContentPage
                 }
             }
 
-            await Task.Delay(1000); 
+            await Task.Delay(1000);
         }
     }
 
@@ -113,4 +121,13 @@ public partial class userProfile : ContentPage
         MostrarDatosChambeador();
     }
 
+    private async void GoToAjustes(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//ajustes");
+    }
+
+    private async void GoToPagos(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//pagos");
+    }
 }
