@@ -36,14 +36,14 @@ public partial class Registro : ContentPage
         // 2. Validaci�n de correo electr�nico
         if (!IsValidEmail(email))
         {
-            await DisplayAlert("Error", "El correo electr�nico no es v�lido.", "OK");
+            await DisplayAlert("Error", "El correo electronico no es valido.", "OK");
             return;
         }
 
         // 3. Validaci�n de contrase�a
         if (password.Length < 6)
         {
-            await DisplayAlert("Error", "La contrase�a debe tener al menos 6 caracteres.", "OK");
+            await DisplayAlert("Error", "La contrasena debe tener al menos 6 caracteres.", "OK");
             return;
         }
 
@@ -66,6 +66,9 @@ public partial class Registro : ContentPage
             username = usernameInTextBox,
             email = emailTxt.Text,
             password = passwordTxt.Text,
+            isWorker = false,   
+            office = string.Empty,
+            alertWork = false
         });
 
         await DisplayAlert("�xito", "Usuario registrado correctamente.", "OK");

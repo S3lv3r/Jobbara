@@ -26,23 +26,13 @@ public partial class inicioSesion : ContentPage
         var emailInTextBox = emailTxt.Text;
         var passwordInTextBox = passwordTxt.Text;
 
-        string emailInTextBox2 = emailTxt.Text?.Trim();
-        string passwordInTextBox2 = passwordTxt.Text;
+
         if (string.IsNullOrWhiteSpace(emailInTextBox) || string.IsNullOrWhiteSpace(passwordInTextBox))
         {
         await DisplayAlert("Error", "Por favor, completa ambos campos.", "OK");
         return;
         }
-        if (passwordInTextBox.Length < 6)
-        {
-            await DisplayAlert("Error", "La contrase�a debe tener al menos 6 caracteres.", "OK");
-            return;
-        }
-        if (!IsValidEmail(emailInTextBox))
-        {
-            await DisplayAlert("Error", "El correo electr�nico no es v�lido.", "OK");
-            return;
-        }
+
         var usersDB = await client
             .Child("Users")
             .OnceAsync<usersModel>();
@@ -57,19 +47,15 @@ public partial class inicioSesion : ContentPage
 
         if (matchingEmail.Object.password != passwordInTextBox)
         {
-            await DisplayAlert("Error", "Contrase�a incorrecta.", "OK");
+            await DisplayAlert("Error", "Contrasena incorrecta.", "OK");
             return;
         }
 
-        await DisplayAlert("�xito", "Inicio de sesion correctamente.", "OK");
-        await Shell.Current.GoToAsync("//userProfile");
-    }
-    private bool IsValidEmail(string email)
-    {
-        if (string.IsNullOrWhiteSpace(email))
-            return false;
+        UserSessionData.username_usd = matchingEmail.Object.username;
+        UserSessionData.email_usd = matchingEmail.Object.email;
+        UserSessionData.password_usd = matchingEmail.Object.password;
 
-        string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-        return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
+        await DisplayAlert("Exito", "Inicio de sesion correctamente.", "OK");
+        await Shell.Current.GoToAsync("//userProfile");
     }
 }

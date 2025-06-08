@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Jobbara.Pages.userProfile"
              Title="userProfile"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
+             shell:Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions="*,Auto">
         <!-- CONTENIDO PRINCIPAL -->
@@ -36,12 +38,13 @@
                     <BoxView HeightRequest="100" BackgroundColor="Transparent"/>
 
                     <!-- Nombre del usuario -->
-                    <Label Text="Betopapu"
+                    <Label Text="UserName"
                            FontSize="32"
                            FontAttributes="Bold"
                            TextColor="White"
                            HorizontalOptions="Center"
-                           Margin="0,-60,0,0"/>
+                           Margin="0,-60,0,0"
+                           x:Name="usernameLbl"/>
 
                     <!-- Imagen de perfil -->
                     <Frame WidthRequest="150"
@@ -159,12 +162,14 @@ FontSize="12"/>
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Grid.Column="1"
-            Margin="0,-30,0,0">
+            Margin="0,-30,0,0"
+            >
                 <!-- 🧠 Flota encima del frame -->
                 <ImageButton Source="plus.png"
                       BackgroundColor="Transparent"
                       Aspect="AspectFit"
-                      Padding="0"/>
+                      Padding="0"
+                      Clicked="CreateAWorkNotificationClicked"/>
             </Frame>
 
             <!-- Botón: Ajustes -->

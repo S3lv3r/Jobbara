@@ -1,15 +1,72 @@
-﻿namespace Jobbara.Pages;
+﻿using Jobbara.Models;
+using System.Text.RegularExpressions;
+using Firebase.Database;
+using Firebase.Database.Query;
+using System.Threading.Tasks;
+
+namespace Jobbara.Pages;
 
 public partial class userProfile : ContentPage
 {
     public userProfile()
     {
         InitializeComponent();
+        LoadDataUser();
     }
     protected override void OnAppearing()
     {
         base.OnAppearing();
         MostrarDatosChambeador();
+        _ = OnListeningAlert();
+    }
+
+    private void LoadDataUser() // Esto carga los datos del usuario guardados en UserSessionData.cs, y los pone en pantalla
+    {
+
+        usernameLbl.Text = UserSessionData.username_usd;
+    }
+    
+    FirebaseClient client = new FirebaseClient("https://jobbara-default-rtdb.firebaseio.com/"); // Referencia a la base de datos
+    private async void CreateAWorkNotificationClicked(object sender, EventArgs e)
+    {
+        var users = await client
+            .Child("Users")
+            .OnceAsync<usersModel>();
+
+        foreach (var user in users)
+        {
+            if(user.Object.isWorker && user.Object.office == "carpintero")
+            {
+                await client
+                    .Child("Users")
+                    .Child(user.Key)
+                    .Child("alertWork") 
+                    .PutAsync(true);
+            }
+        }
+    }
+
+    public async Task OnListeningAlert()
+    {
+        while(true)
+        {
+            var users = await client
+                .Child("Users")
+                .OnceAsync<dynamic>();
+
+            var userCurrent = users.FirstOrDefault(u => u.Object.username == UserSessionData.username_usd);
+
+            if(userCurrent != null)
+            {
+                var alertWork = userCurrent.Object.alertWork;
+                if (alertWork == true)
+                {
+                    await DisplayAlert("Alerta de Trabajo", "Hay un nuevo trabajo disponible para ti.", "OK");
+                }
+            }
+
+            await Task.Delay(1000); 
+        }
     }
     private void MostrarDatosChambeador()
     {
@@ -37,7 +94,7 @@ public partial class userProfile : ContentPage
 
     private async void OnBecomeWorkerClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//newChambeador");
+        await Shell.Current.GoToAsync("newChambeador");
     }
     private void OnDeleteChambeadorData(object sender, EventArgs e)
     {

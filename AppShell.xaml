@@ -9,11 +9,11 @@
     Title="Jobbara">
     
     <ShellContent
-    Title="Login"
-    ContentTemplate="{DataTemplate pages:inicioSesion}"
-    Route="loginPage" />
+        Title="Login"
+        ContentTemplate="{DataTemplate pages:inicioSesion}"
+        Route="loginPage" />
     <ShellContent 
-         Title="userProfile"
+        Title="userProfile"
         Route="userProfile" 
         ContentTemplate="{DataTemplate pages:userProfile}" />
     <ShellContent
@@ -25,9 +25,9 @@
         ContentTemplate="{DataTemplate pages:Registro}"
         Route="signPage" />
     <ShellContent
-Title="Home"
-ContentTemplate="{DataTemplate pages:homePage}"
-Route="homePage" />
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:homePage}"
+        Route="homePage" /> 
 
 
 </Shell>
