@@ -19,10 +19,7 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-<<<<<<< HEAD
-=======
 		
->>>>>>> 50b5b32 (Primer commit bro)
 
 		<!-- Display name -->
 		<ApplicationTitle>Jobbara</ApplicationTitle>
@@ -44,12 +41,9 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-<<<<<<< HEAD
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
-=======
 <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" />		
->>>>>>> 50b5b32 (Primer commit bro)
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
@@ -78,19 +72,14 @@
 	  <MauiXaml Update="Pages\inicioSesion.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-<<<<<<< HEAD
-=======
 	  <MauiXaml Update="Pages\mapChamber.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
->>>>>>> 50b5b32 (Primer commit bro)
 	  <MauiXaml Update="Pages\Registro.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
-<<<<<<< HEAD
-=======
 	<ItemGroup>
 	  <None Update="Pages\newChambeador.xaml">
 	    <Generator>MSBuild:Compile</Generator>
@@ -100,5 +89,4 @@
 	  </None>
 	</ItemGroup>
 
->>>>>>> 50b5b32 (Primer commit bro)
 </Project>
