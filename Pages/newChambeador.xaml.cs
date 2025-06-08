@@ -60,6 +60,8 @@ public partial class newChambeador : ContentPage
         return true;
     }
     // Solo guardar datos (quedarse en la misma página)
+
+
     private async void OnSaveClicked(object sender, EventArgs e)
     {
         bool datosValidos = GuardarDatosLocal();
@@ -74,6 +76,8 @@ public partial class newChambeador : ContentPage
     }
 
     // Guardar + regresar al perfil
+
+
     private async void OnConfirmClicked(object sender, EventArgs e)
     {
         if (!TermsCheck.IsChecked)

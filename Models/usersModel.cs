@@ -11,7 +11,8 @@ namespace Jobbara.Models
         public string username { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public bool isWorker { get; set; }
+        public bool availableWork { get; set; }
+        public bool isWorking { get; set; }
         public string office { get; set; }
         public bool alertWork { get; set; }
     }

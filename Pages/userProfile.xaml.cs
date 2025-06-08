@@ -35,7 +35,7 @@ public partial class userProfile : ContentPage
 
         foreach (var user in users)
         {
-            if(user.Object.isWorker && user.Object.office == "carpintero")
+            if(user.Object.availableWork && user.Object.office == "carpintero")
             {
                 await client
                     .Child("Users")
@@ -68,6 +68,11 @@ public partial class userProfile : ContentPage
             await Task.Delay(1000); 
         }
     }
+
+
+
+
+    /// CODIGO QUE TODAVIA NO REVISO 
     private void MostrarDatosChambeador()
     {
         bool isWorker = Preferences.Get("IsWorker", false);
