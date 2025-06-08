@@ -4,7 +4,7 @@ public partial class homePage : ContentPage
 {
 	public homePage()
 	{
-		InitializeComponent(); //All okey
+        InitializeComponent();
 	}
 	private async void OnGoToProfile(object sender, EventArgs e)
 	{

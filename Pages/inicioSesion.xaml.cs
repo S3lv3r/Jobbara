@@ -56,6 +56,6 @@ public partial class inicioSesion : ContentPage
         UserSessionData.password_usd = matchingEmail.Object.password;
 
         await DisplayAlert("Exito", "Inicio de sesion correctamente.", "OK");
-        await Shell.Current.GoToAsync("//userProfile");
+        await Shell.Current.GoToAsync("//homePage");
     }
 }
