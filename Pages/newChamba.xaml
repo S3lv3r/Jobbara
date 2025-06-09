@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jobbara.Pages.newChamba"
+             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
+             shell:Shell.NavBarIsVisible="False"
+             Title="newChamba"
+             BackgroundColor="#F9F9F9">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <Label Text="Solicita una Chamba"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="Center"/>
+
+            <!-- Título -->
+            <Frame CornerRadius="10" WidthRequest="350" HeightRequest="52" BackgroundColor="White">
+                <Entry Placeholder="¿Qué chamba necesitas?"
+                   BackgroundColor="White"
+                   PlaceholderColor="Gray"
+                   TextColor="Black"
+                   HeightRequest="50"/>
+            </Frame>
+
+            <!-- Descripción -->
+            <Frame CornerRadius="10" WidthRequest="350" HeightRequest="122" BackgroundColor="White">
+            <Editor Placeholder="Describe la chamba"
+                    BackgroundColor="White"
+                    PlaceholderColor="Gray"
+                    TextColor="Black"
+                    AutoSize="TextChanges"
+                    HeightRequest="120"/>
+                </Frame>
+
+            <!-- Tipo de trabajo -->
+            <Frame CornerRadius="10" WidthRequest="350" HeightRequest="100" BackgroundColor="White">
+                <Picker Title="Selecciona el tipo"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    TitleColor="Gray">
+                    <Picker.Items>
+                        <x:String>Plomería</x:String>
+                        <x:String>Electricidad</x:String>
+                        <x:String>Limpieza</x:String>
+                        <x:String>Construcción</x:String>
+                        <x:String>Otro</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+
+            <!-- Dirección -->
+            <Frame CornerRadius="10" WidthRequest="350" HeightRequest="52" BackgroundColor="White">
+            <Entry Placeholder="Tu dirección"
+                   BackgroundColor="White"
+                   PlaceholderColor="Gray"
+                   TextColor="Black"
+                   HeightRequest="50"/>
+            </Frame>
+
+            <!-- Monto a pagar -->
+            <Frame CornerRadius="10" WidthRequest="350" HeightRequest="52" BackgroundColor="White">
+            <Entry Placeholder="¿Cuánto pagas? (MXN)"
+                   Keyboard="Numeric"
+                   BackgroundColor="White"
+                   PlaceholderColor="Gray"
+                   TextColor="Black"
+                   HeightRequest="50"/>
+            </Frame>
+
+            <!-- Botón de aceptar -->
+            <Button Text="Aceptar"
+                    BackgroundColor="#FF9B51"
+                    TextColor="White"
+                    CornerRadius="15"
+                    HeightRequest="50"
+                    Clicked="OnAceptarClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

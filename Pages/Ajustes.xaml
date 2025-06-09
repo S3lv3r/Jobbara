@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jobbara.Pages.Ajustes"
+             shell:Shell.NavBarIsVisible="False"
+             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
+             Title="Ajustes"
+             BackgroundColor="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Parte superior -->
+        <Grid Grid.Row="0">
+            <BoxView HeightRequest="200"
+                     BackgroundColor="#FF9B51"
+                     CornerRadius="0,0,200,200"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Start"/>
+            <ImageButton Source="back.png"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Start"
+                         Clicked="OnGoToHome"
+                         Margin="10"
+                         WidthRequest="28"
+                         HeightRequest="28"
+                         BackgroundColor="#FF9B51"/>
+            <ImageButton Source="bell.png"
+WidthRequest="28" HeightRequest="28"
+BackgroundColor="Transparent"
+Clicked="OnGoToNot"
+VerticalOptions="Start"
+Margin="0,15,10,0"
+HorizontalOptions="End"/>
+            <!--desde aqui-->
+
+            <ScrollView Margin="0,60,0,0">
+                <VerticalStackLayout Padding="20" Spacing="20">
+
+                    <Label Text="Ajustes"
+               FontSize="32"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"/>
+
+                    <Frame BackgroundColor="#FFF7F2"
+               BorderColor="#FF9B51"
+               CornerRadius="15"
+               Padding="15"
+               HasShadow="True">
+                        <VerticalStackLayout Spacing="15">
+                            <Label Text="Cuenta"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#FF6A00"/>
+                            <Button Text="Cerrar Sesión"
+                        BackgroundColor="#FF9B51"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnCerrarSesion"/>
+                            <Button Text="Borrar Cuenta"
+                        BackgroundColor="#FF9B51"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnBorrarCuenta"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#FFF7F2"
+               BorderColor="#FF9B51"
+               CornerRadius="15"
+               Padding="15"
+               HasShadow="True">
+                        <VerticalStackLayout Spacing="15">
+                            <Label Text="Extras"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#FF6A00"/>
+                            <Button Text="Free Moiney"
+                        BackgroundColor="DarkOrange"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnFreeMoiney"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+
+        <!-- Hasta aca-->
+        <Grid Grid.Row="1"
+              BackgroundColor="#F0F0F0"
+              Padding="10"
+              HeightRequest="70"
+              ColumnSpacing="30">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Botón: Ajustes -->
+            <ImageButton
+             BackgroundColor="Transparent"
+             Grid.Column="0"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             WidthRequest="40"
+             Source="settings.png"
+             Margin="0,-20,0,0"/>
+            <Label Text="Ajustes" TextColor="DarkOrange" FontAttributes="Bold"
+                   Grid.Column="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,34,0,0"
+                   FontSize="12"/>
+
+            <!-- Botón central -->
+            <Frame HeightRequest="80"
+                   WidthRequest="80"
+                   CornerRadius="40"
+                   BackgroundColor="#FF9B51"
+                   Padding="0"
+                   HasShadow="True"
+                   BorderColor="#E65100"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1"
+                   Margin="0,-30,0,0">
+                <ImageButton Source="plus.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFit"
+                             Padding="0"
+                             Clicked="GoToChamba"/>
+            </Frame>
+
+            <!-- Botón: Pagos -->
+            <ImageButton
+             BackgroundColor="Transparent"
+             Grid.Column="2"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Source="money.png"
+             WidthRequest="47"
+             Margin="0,-16,0,0"
+             Clicked="GoToPagos"/>
+            <Label Text="Pagos" TextColor="DarkOrange" FontAttributes="Bold"
+                   Grid.Column="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,34,0,0"
+                   FontSize="12"/>
+        </Grid>
+    </Grid>
+</ContentPage>

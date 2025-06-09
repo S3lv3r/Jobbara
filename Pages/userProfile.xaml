@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jobbara.Pages.userProfile"
+             Title="userProfile"
+             BackgroundColor="White"
+             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
+             shell:Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <!-- CORRECTA DEFINICIÓN DE ROWS -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- Botón de regreso -->
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <Grid Grid.Row="0">
+            <!-- Fondo superior decorativo -->
+            <BoxView HeightRequest="200"
+                     BackgroundColor="#FF9B51"
+                     CornerRadius="0,0,200,200"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Start"/>
+            <ImageButton Source="back.png"
+HorizontalOptions="Start"
+VerticalOptions="Start"
+Clicked="OnGoToHome"
+Margin="10"
+WidthRequest="28"
+HeightRequest="28"
+BackgroundColor="#FF9B51"/>
+            <!-- Notificaciones -->
+            <ImageButton Source="bell.png"
+WidthRequest="28" HeightRequest="28"
+BackgroundColor="Transparent"
+Clicked="OnGoToNot"
+VerticalOptions="Start"
+Margin="0,15,10,0"
+HorizontalOptions="End"/>
+
+            <ScrollView Margin="0,50,0,0">
+                <VerticalStackLayout Margin="0,0,0,0" Padding="20" Spacing="20" >
+
+                    <BoxView HeightRequest="40" Margin="0,40,0,0" BackgroundColor="Transparent"/>
+
+                    <Label Text="UserName"
+                           FontSize="32"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           Margin="0,-60,0,0"
+                           x:Name="usernameLbl"
+                           BackgroundColor="Transparent"/>
+
+                    <Frame WidthRequest="150"
+                           HeightRequest="150"
+                           CornerRadius="75"
+                           Padding="0"
+                           Margin="0,-20,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"
+                           HasShadow="True"
+                           BorderColor="#FF6A00"
+                           BackgroundColor="White">
+                        <Image Source="profile_default.png"
+                               Aspect="AspectFill"/>
+                    </Frame>
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Dato 1" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="Dato 2" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="Dato 3" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="Dato 4" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="Dato 5" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                    </VerticalStackLayout>
+
+                    <!-- Sección para Chambeador -->
+                    <Frame x:Name="WorkerDataSection"
+                           IsVisible="False"
+                           Padding="15"
+                           Margin="0,10,0,0"
+                           BackgroundColor="#FFF7F2"
+                           BorderColor="#FF9B51"
+                           CornerRadius="15">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Datos de Chambeador"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   TextColor="#FF6A00"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="Oficio:" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                            <Label x:Name="OficioLabel" FontSize="16" TextColor="Black"/>
+                            <Label Text="INE:" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                            <Label x:Name="IneLabel" FontSize="16" TextColor="Black"/>
+                            <Label Text="Curp:" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                            <Label x:Name="CurpLabel" FontSize="16" TextColor="Black"/>
+                            <Label Text="Domicilio:" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                            <Label x:Name="DomicilioLabel" FontSize="16" TextColor="Black"/>
+                            <Label Text="RFC:" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                            <Label x:Name="RfcLabel" FontSize="16" TextColor="Black"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Botones -->
+                    <VerticalStackLayout Spacing="15" Margin="0,30,0,0" HorizontalOptions="Center">
+                        <Button Text="Editar Perfil"
+                                BackgroundColor="#FF9B51"
+                                TextColor="White"
+                                CornerRadius="10"
+                                WidthRequest="200"/>
+                        <Button Text="Conviértete en Chambeador"
+                                BackgroundColor="DarkOrange"
+                                TextColor="White"
+                                CornerRadius="10"
+                                WidthRequest="250"
+                                Clicked="OnBecomeWorkerClicked"
+                                x:Name="BecomeWorkerButton"/>
+                        <Button Text="Borrar Datos de Chambeador (DEBUG)"
+                                BackgroundColor="#E53935"
+                                TextColor="White"
+                                IsVisible="True"
+                                Clicked="OnDeleteChambeadorData"/>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+
+        <!-- BARRA DE NAVEGACIÓN INFERIOR -->
+        <Grid Grid.Row="1"
+              BackgroundColor="#F0F0F0"
+              Padding="10"
+              HeightRequest="70"
+              ColumnSpacing="30">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Botón: Ajustes -->
+            <ImageButton
+             BackgroundColor="Transparent"
+             Grid.Column="0"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Clicked="GoToAjustes"
+             WidthRequest="40"
+             Source="settings.png"
+             Margin="0,-20,0,0"/>
+            <Label Text="Ajustes" TextColor="DarkOrange" FontAttributes="Bold"
+                   Grid.Column="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,34,0,0"
+                   FontSize="12"/>
+
+            <!-- Botón central grande -->
+            <Frame HeightRequest="80"
+                   WidthRequest="80"
+                   CornerRadius="40"
+                   BackgroundColor="#FF9B51"
+                   Padding="0"
+                   HasShadow="True"
+                   BorderColor="#E65100"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1"
+                   Margin="0,-30,0,0">
+                <ImageButton Source="plus.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFit"
+                             Padding="0"
+                             Clicked="GoToChamba"/>
+            </Frame>
+
+            <!-- Botón: Pagos -->
+            <ImageButton
+             BackgroundColor="Transparent"
+             Grid.Column="2"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Margin="0,-16,0,0"
+             Source="money.png"
+             Clicked="GoToPagos"
+             WidthRequest="47"/>
+            <Label Text="Pagos" TextColor="DarkOrange" FontAttributes="Bold"
+                   Grid.Column="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,34,0,0"
+                   FontSize="12"/>
+        </Grid>
+    </Grid>
+</ContentPage>

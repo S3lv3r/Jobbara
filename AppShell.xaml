@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Jobbara.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Jobbara"
+    xmlns:pages="clr-namespace:Jobbara.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Jobbara">
+    
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate pages:inicioSesion}"
+        Route="loginPage" />
+    <ShellContent 
+        Title="userProfile"
+        Route="userProfile" 
+        ContentTemplate="{DataTemplate pages:userProfile}" />
+    <ShellContent
+         Title="newChambeador"
+        Route="newChambeador" 
+        ContentTemplate="{DataTemplate pages:newChambeador}" />
+    <ShellContent
+        Title="SignUp"
+        ContentTemplate="{DataTemplate pages:Registro}"
+        Route="signPage" />
+    <ShellContent
+Title="Home"
+ContentTemplate="{DataTemplate pages:homePage}"
+Route="homePage" />
+    <ShellContent Title="Solicitar" Route="solicitar" ContentTemplate="{DataTemplate pages:Solicitar}" />
+    <ShellContent Title="Ajustes" Route="ajustes" ContentTemplate="{DataTemplate pages:Ajustes}" />
+    <ShellContent Title="Pagos" Route="pagos" ContentTemplate="{DataTemplate pages:Pagos}" />
+    <ShellContent Title="Notificaciones" Route="notificaciones" ContentTemplate="{DataTemplate pages:Notificaciones}"/>
+    <ShellContent Title="Mapa" Route="mapa" ContentTemplate="{DataTemplate pages:mapChamber}"/>
+    <ShellContent Title="Chamba" Route="chamba" ContentTemplate="{DataTemplate pages:newChamba}"/>
+
+
+</Shell>
