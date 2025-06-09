@@ -1,3 +1,4 @@
+using Jobbara.Models;
 namespace Jobbara.Pages;
 
 public partial class Ajustes : ContentPage
@@ -49,6 +50,6 @@ public partial class Ajustes : ContentPage
     private async void GoToChamba(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//chamba");
-        await DisplayAlert("Free Moiney", "Pues vu�lvete chambeador y gana dinero ??", "OK");
+        
     }
 }

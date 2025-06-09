@@ -79,6 +79,9 @@
   <MauiXaml Update="Pages\inicioSesion.xaml">
     <Generator>MSBuild:Compile</Generator>
   </MauiXaml>
+  <MauiXaml Update="Pages\mainPageTest.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </MauiXaml>
   <MauiXaml Update="Pages\mapChamber.xaml">
     <Generator>MSBuild:Compile</Generator>
   </MauiXaml>

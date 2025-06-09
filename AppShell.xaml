@@ -25,6 +25,11 @@
         ContentTemplate="{DataTemplate pages:Registro}"
         Route="signPage" />
     <ShellContent
+    Title="mainPage"
+    ContentTemplate="{DataTemplate pages:mainPageTest}"
+    Route="mainPage" />
+    
+    <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate pages:homePage}"
         Route="homePage" /> 

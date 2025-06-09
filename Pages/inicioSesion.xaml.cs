@@ -58,7 +58,7 @@ public partial class inicioSesion : ContentPage
             UserSessionData.office_usd = matchingEmail.Object.office?.Name ?? "No especificado";
 
             await DisplayAlert("Éxito", "Inicio de sesión correcto.", "OK");
-            await Shell.Current.GoToAsync("//ajustes");
+            await Shell.Current.GoToAsync("//homePage");
         }
         catch (Exception ex)
         {
