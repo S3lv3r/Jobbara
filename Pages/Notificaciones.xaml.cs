@@ -33,4 +33,8 @@ public partial class Notificaciones : ContentPage
         public string Mensaje { get; set; }
         public string Fecha { get; set; }
     }
+    private async void GoToChamba(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//chambaclient");
+    }
 }
