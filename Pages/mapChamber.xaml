@@ -2,11 +2,103 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Jobbara.Pages.mapChamber"
-             Title="mapChamber">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="mapChamber"
+             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
+shell:Shell.NavBarIsVisible="False"
+              BackgroundColor="White">
+
+    <Grid Padding="20" VerticalOptions="Start" Margin="0,40,0,0">
+
+        <VerticalStackLayout Spacing="20">
+
+            <!-- Frame principal -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   Padding="20"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Start">
+
+                <StackLayout Spacing="20">
+
+                    <!-- Info del trabajador -->
+                    <Frame BackgroundColor="#DDDDDD"
+                           CornerRadius="15"
+                           Padding="15"
+                           HasShadow="False">
+                        <Grid ColumnSpacing="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Imagen -->
+                            <Image Source="perfil.png"
+                                   WidthRequest="80"
+                                   HeightRequest="80"
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="Center"
+                                   Grid.Column="0"
+                                   Margin="0,0,10,0"/>
+
+                            <!-- Datos -->
+                            <VerticalStackLayout Grid.Column="1"
+                                                 VerticalOptions="Center"
+                                                 Spacing="5">
+                                <Label Text="Juan Pérez"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="Dirección: Calle Falsa 123"
+                                       FontSize="14"
+                                       TextColor="Gray"/>
+                                <Label Text="Trabajo: Electricista"
+                                       FontSize="14"
+                                       TextColor="Gray"/>
+                                <Label Text="Monto a pagar: idk"
+                                       FontSize="14"
+                                       TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Botones -->
+                    <HorizontalStackLayout Spacing="15"
+                                           HorizontalOptions="Center" Margin="0,350,0,0">
+                        <Button Text="Cancelar"
+                                BackgroundColor="#FF5C5C"
+                                TextColor="White"
+                                CornerRadius="15"
+                                WidthRequest="120"
+                                Clicked="OnCancelarClicked"/>
+
+                        <Button Text="Reportar"
+                                BackgroundColor="#FFA500"
+                                TextColor="White"
+                                CornerRadius="15"
+                                WidthRequest="120"
+                                Clicked="OnReportarClicked"/>
+                    </HorizontalStackLayout>
+
+                    <!-- Frame para imagen adicional -->
+                    <Frame BackgroundColor="#EEEEEE"
+                           CornerRadius="15"
+                           HeightRequest="80"
+                           HorizontalOptions="Fill"
+                           HasShadow="False"
+                           WidthRequest="290">
+                        <Image Source="anuncio.png"
+                               Aspect="AspectFill"
+                               HeightRequest="80"
+                               WidthRequest="290"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </Frame>
+
+                </StackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

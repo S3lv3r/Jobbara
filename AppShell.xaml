@@ -7,7 +7,7 @@
     xmlns:pages="clr-namespace:Jobbara.Pages"
     Shell.FlyoutBehavior="Disabled"
     Title="Jobbara">
-    
+
     <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate pages:inicioSesion}"
@@ -32,7 +32,8 @@ Route="homePage" />
     <ShellContent Title="Ajustes" Route="ajustes" ContentTemplate="{DataTemplate pages:Ajustes}" />
     <ShellContent Title="Pagos" Route="pagos" ContentTemplate="{DataTemplate pages:Pagos}" />
     <ShellContent Title="Notificaciones" Route="notificaciones" ContentTemplate="{DataTemplate pages:Notificaciones}"/>
-
+    <ShellContent Title="Mapa" Route="mapa" ContentTemplate="{DataTemplate pages:mapChamber}"/>
+    <ShellContent Title="Chamba" Route="chamba" ContentTemplate="{DataTemplate pages:newChamba}"/>
 
 
 </Shell>
