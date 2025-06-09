@@ -7,10 +7,12 @@
             InitializeComponent();
 
             Routing.RegisterRoute("userProfile", typeof(Jobbara.Pages.userProfile));
+            Routing.RegisterRoute("mainPage", typeof(Jobbara.Pages.mainPageTest));
             Routing.RegisterRoute("loginPage", typeof(Jobbara.Pages.inicioSesion));
             Routing.RegisterRoute("signPage", typeof(Jobbara.Pages.Registro));
             Routing.RegisterRoute("newChambeador", typeof(Jobbara.Pages.newChambeador));
             Routing.RegisterRoute("homePage", typeof(Jobbara.Pages.homePage));
+            Routing.RegisterRoute("ajustes", typeof(Jobbara.Pages.Ajustes));
         }
     }
 }

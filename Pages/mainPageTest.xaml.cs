@@ -1,19 +1,11 @@
-using Jobbara.Models;
-
 namespace Jobbara.Pages;
 
-public partial class homePage : ContentPage
+public partial class mainPageTest : ContentPage
 {
-    public homePage()
-    {
-        InitializeComponent();
-        LoadDataUser();
-    }
-    private void LoadDataUser()
-    {
-        usernameLbl.Text = UserSessionData.username_usd;
-    }
-
+	public mainPageTest()
+	{
+		InitializeComponent();
+	}
     private async void OnGoToProfile(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//userProfile");

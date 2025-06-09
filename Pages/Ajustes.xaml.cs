@@ -1,3 +1,4 @@
+using Jobbara.Models;
 namespace Jobbara.Pages;
 
 public partial class Ajustes : ContentPage
@@ -25,28 +26,30 @@ public partial class Ajustes : ContentPage
     }
     private async void OnCerrarSesion(object sender, EventArgs e)
     {
-        // Aquí podrías limpiar preferencias, tokens, etc.
-        await DisplayAlert("Cerrando sesión", "Has cerrado sesión, vaquero.", "OK");
-        // Navegar al login u otra página
+        // Aquï¿½ podrï¿½as limpiar preferencias, tokens, etc.
+        await DisplayAlert("Cerrando sesiï¿½n", "Has cerrado sesiï¿½n, vaquero.", "OK");
+        // Navegar al login u otra pï¿½gina
     }
 
     private async void OnBorrarCuenta(object sender, EventArgs e)
     {
-        bool confirm = await DisplayAlert("¿Estás seguro?", "Esta acción eliminará tu cuenta para siempre.", "Sí, borrar", "Cancelar");
+        bool confirm = await DisplayAlert("ï¿½Estï¿½s seguro?", "Esta acciï¿½n eliminarï¿½ tu cuenta para siempre.", "Sï¿½, borrar", "Cancelar");
         if (confirm)
         {
-            // Aquí podrías llamar a un servicio que borre la cuenta
-            await DisplayAlert("Cuenta borrada", "Tu cuenta ha sido eliminada. Adiós, cowboy ??", "OK");
-            // Navegar al login u otra página
+            // Aquï¿½ podrï¿½as llamar a un servicio que borre la cuenta
+            await DisplayAlert("Cuenta borrada", "Tu cuenta ha sido eliminada. Adiï¿½s, cowboy ??", "OK");
+            // Navegar al login u otra pï¿½gina
         }
     }
 
     private async void OnFreeMoiney(object sender, EventArgs e)
     {
-        await DisplayAlert("Free Moiney", "Pues vuélvete chambeador y gana dinero ??", "OK");
+
+        await DisplayAlert("Free Moiney", "Pues vuï¿½lvete chambeador y gana dinero ??", "OK");
     }
     private async void GoToChamba(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//chambaclient");
+        await Shell.Current.GoToAsync("//chamba");
+        
     }
 }

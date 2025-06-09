@@ -121,7 +121,7 @@ shell:Shell.NavBarIsVisible="False"
                              BackgroundColor="Transparent"
                              Aspect="AspectFit"
                              Padding="0"
-                             Clicked="OnGoToChamba"/>
+                             />
             </Frame>
 
             <!-- Pagos -->

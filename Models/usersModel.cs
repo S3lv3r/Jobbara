@@ -13,7 +13,7 @@ namespace Jobbara.Models
         public string password { get; set; }
         public bool availableWork { get; set; }
         public bool isWorking { get; set; }
-        public string office { get; set; }
+        public officeModel office { get; set; }
         public bool alertWork { get; set; }
     }
 }

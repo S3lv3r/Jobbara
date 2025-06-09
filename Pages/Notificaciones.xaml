@@ -116,7 +116,7 @@
                              BackgroundColor="Transparent"
                              Aspect="AspectFit"
                              Padding="0"
-                             Clicked="OnGoToChamba"/>
+                             />
             </Frame>
 
             <!-- Pagos -->

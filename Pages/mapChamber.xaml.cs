@@ -12,11 +12,11 @@ public partial class mapChamber : ContentPage
     private async void OnAceptarClicked(object sender, EventArgs e)
     {
         await DisplayAlert("Aceptado", "Has aceptado esta solicitud", "OK");
-        // Aquí puedes agregar navegación u otra lógica
+        // Aquï¿½ puedes agregar navegaciï¿½n u otra lï¿½gica
     }
     private async void OnCancelarClicked(object sender, EventArgs e)
     {
         await DisplayAlert("Rechazado", "Has rechazado esta solicitud", "OK");
-        // Aquí puedes agregar navegación u otra lógica
+        // Aquï¿½ puedes agregar navegaciï¿½n u otra lï¿½gica
     }
 }
