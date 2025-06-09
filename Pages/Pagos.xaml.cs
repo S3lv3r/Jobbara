@@ -25,6 +25,6 @@ public partial class Pagos : ContentPage
     }
     private async void GoToChamba(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//chambaclient");
+        await Shell.Current.GoToAsync("chamba");
     }
 }

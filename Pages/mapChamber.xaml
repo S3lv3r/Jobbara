@@ -20,7 +20,7 @@ shell:Shell.NavBarIsVisible="False"
                    VerticalOptions="Start">
 
                 <StackLayout Spacing="20">
-
+                    
                     <!-- Info del trabajador -->
                     <Frame BackgroundColor="#DDDDDD"
                            CornerRadius="15"
@@ -33,7 +33,7 @@ shell:Shell.NavBarIsVisible="False"
                             </Grid.ColumnDefinitions>
 
                             <!-- Imagen -->
-                            <Image Source="perfil.png"
+                            <Image Source="profile_default.png"
                                    WidthRequest="80"
                                    HeightRequest="80"
                                    Aspect="AspectFill"
@@ -46,19 +46,23 @@ shell:Shell.NavBarIsVisible="False"
                             <VerticalStackLayout Grid.Column="1"
                                                  VerticalOptions="Center"
                                                  Spacing="5">
-                                <Label Text="Juan Pérez"
+                                <Label Text="Nombre"
                                        FontSize="20"
                                        FontAttributes="Bold"
-                                       TextColor="Black"/>
-                                <Label Text="Dirección: Calle Falsa 123"
+                                       TextColor="Black"
+                                       x:Name="lblName"/>
+                                <Label Text="Dirección: none"
                                        FontSize="14"
-                                       TextColor="Gray"/>
-                                <Label Text="Trabajo: Electricista"
+                                       TextColor="Gray"
+                                       x:Name="addressLbl"/>
+                                <Label Text="Trabajo: none"
                                        FontSize="14"
-                                       TextColor="Gray"/>
+                                       TextColor="Gray"
+                                       x:Name="jobLbl"/>
                                 <Label Text="Monto a pagar: idk"
                                        FontSize="14"
-                                       TextColor="Gray"/>
+                                       TextColor="Gray"
+                                       x:Name="paymentLbl"/>
                             </VerticalStackLayout>
                         </Grid>
                     </Frame>

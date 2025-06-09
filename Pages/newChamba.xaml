@@ -22,7 +22,8 @@
                    BackgroundColor="White"
                    PlaceholderColor="Gray"
                    TextColor="Black"
-                   HeightRequest="50"/>
+                   HeightRequest="50"
+                       x:Name="typeNotiLbl"/>
             </Frame>
 
             <!-- Descripción -->
@@ -32,23 +33,19 @@
                     PlaceholderColor="Gray"
                     TextColor="Black"
                     AutoSize="TextChanges"
-                    HeightRequest="120"/>
+                    HeightRequest="120"
+                        x:Name="descNotiLbl"/>
             </Frame>
 
             <!-- Tipo de trabajo -->
             <Frame CornerRadius="10" WidthRequest="350" HeightRequest="100" BackgroundColor="White">
                 <Picker Title="Selecciona el tipo"
+                    ItemsSource="{Binding officeModel}"
+                    ItemDisplayBinding="{Binding Name}"
                     BackgroundColor="White"
+                    x:Name="officePicker"
                     TextColor="Black"
-                    TitleColor="Gray">
-                    <Picker.Items>
-                        <x:String>Plomería</x:String>
-                        <x:String>Electricidad</x:String>
-                        <x:String>Limpieza</x:String>
-                        <x:String>Construcción</x:String>
-                        <x:String>Otro</x:String>
-                    </Picker.Items>
-                </Picker>
+                    TitleColor="Gray"/>
             </Frame>
 
             <!-- Dirección -->
@@ -57,7 +54,8 @@
                    BackgroundColor="White"
                    PlaceholderColor="Gray"
                    TextColor="Black"
-                   HeightRequest="50"/>
+                   HeightRequest="50"
+                       x:Name="adressNotiLbl"/>
             </Frame>
 
             <!-- Monto a pagar -->
@@ -67,7 +65,8 @@
                    BackgroundColor="White"
                    PlaceholderColor="Gray"
                    TextColor="Black"
-                   HeightRequest="50"/>
+                   HeightRequest="50"
+                       x:Name="payNotiLbl"/>
             </Frame>
 
             <!-- Botón de aceptar -->

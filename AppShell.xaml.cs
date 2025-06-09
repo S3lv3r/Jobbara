@@ -13,6 +13,7 @@
             Routing.RegisterRoute("newChambeador", typeof(Jobbara.Pages.newChambeador));
             Routing.RegisterRoute("homePage", typeof(Jobbara.Pages.homePage));
             Routing.RegisterRoute("ajustes", typeof(Jobbara.Pages.Ajustes));
+            Routing.RegisterRoute("chamba", typeof(Jobbara.Pages.newChamba));
         }
     }
 }

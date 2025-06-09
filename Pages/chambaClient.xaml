@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Jobbara.Pages.chambaClient"
-             Title="chambaClient"             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
-shell:Shell.NavBarIsVisible="False"
-              BackgroundColor="White">
+             Title="chambaClient"             
+             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
+             shell:Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
 
     <Grid Padding="20" VerticalOptions="Start" Margin="0,40,0,0">
 
@@ -32,7 +33,7 @@ shell:Shell.NavBarIsVisible="False"
                             </Grid.ColumnDefinitions>
 
                             <!-- Imagen -->
-                            <Image Source="perfil.png"
+                            <Image Source="profile_default.png"
                                    WidthRequest="80"
                                    HeightRequest="80"
                                    Aspect="AspectFill"
@@ -48,10 +49,12 @@ shell:Shell.NavBarIsVisible="False"
                                 <Label Text="Juan Pérez"
                                        FontSize="20"
                                        FontAttributes="Bold"
-                                       TextColor="Black"/>
-                                <Label Text="Trabajo: Electricista"
+                                       TextColor="Black"
+                                       x:Name ="nameLbl" />
+                                <Label Text="Trabajo: none"
                                        FontSize="14"
-                                       TextColor="Gray"/>
+                                       TextColor="Gray"
+                                       x:Name="jobTypeLbl"/>
                             </VerticalStackLayout>
                         </Grid>
                     </Frame>

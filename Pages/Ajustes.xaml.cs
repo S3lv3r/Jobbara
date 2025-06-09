@@ -26,9 +26,8 @@ public partial class Ajustes : ContentPage
     }
     private async void OnCerrarSesion(object sender, EventArgs e)
     {
-        // Aqu� podr�as limpiar preferencias, tokens, etc.
-        await DisplayAlert("Cerrando sesi�n", "Has cerrado sesi�n, vaquero.", "OK");
-        // Navegar al login u otra p�gina
+        await DisplayAlert("Cerrando sesion", "Has cerrado sesion.", "OK");
+        await Shell.Current.GoToAsync("//loginPage");
     }
 
     private async void OnBorrarCuenta(object sender, EventArgs e)
@@ -49,7 +48,7 @@ public partial class Ajustes : ContentPage
     }
     private async void GoToChamba(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//chamba");
+        await Shell.Current.GoToAsync("chamba");
         
     }
 }
