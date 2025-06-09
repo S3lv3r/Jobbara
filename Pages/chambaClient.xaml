@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Jobbara.Pages.mapChamber"
-             Title="mapChamber"
-             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
+             x:Class="Jobbara.Pages.chambaClient"
+             Title="chambaClient"             xmlns:shell="http://schemas.microsoft.com/dotnet/2021/maui"
 shell:Shell.NavBarIsVisible="False"
               BackgroundColor="White">
 
@@ -50,13 +49,7 @@ shell:Shell.NavBarIsVisible="False"
                                        FontSize="20"
                                        FontAttributes="Bold"
                                        TextColor="Black"/>
-                                <Label Text="Dirección: Calle Falsa 123"
-                                       FontSize="14"
-                                       TextColor="Gray"/>
                                 <Label Text="Trabajo: Electricista"
-                                       FontSize="14"
-                                       TextColor="Gray"/>
-                                <Label Text="Monto a pagar: idk"
                                        FontSize="14"
                                        TextColor="Gray"/>
                             </VerticalStackLayout>
@@ -66,21 +59,28 @@ shell:Shell.NavBarIsVisible="False"
                     <!-- Botones -->
                     <HorizontalStackLayout Spacing="15"
                                            HorizontalOptions="Center" Margin="0,350,0,0">
-                        <Button Text="Rechazar"
+                        <Button Text="Cancelar"
                                 BackgroundColor="#FF5C5C"
                                 TextColor="White"
                                 CornerRadius="15"
                                 WidthRequest="120"
                                 Clicked="OnCancelarClicked"/>
-
-                        <Button Text="Aceptar"
-                                BackgroundColor="Green"
-                                TextColor="White"
-                                CornerRadius="15"
-                                WidthRequest="120"
-                                Clicked="OnAceptarClicked"/>
                     </HorizontalStackLayout>
 
+                    <!-- Frame para imagen adicional -->
+                    <Frame BackgroundColor="#EEEEEE"
+                           CornerRadius="15"
+                           HeightRequest="80"
+                           HorizontalOptions="Fill"
+                           HasShadow="False"
+                           WidthRequest="290">
+                        <Image Source="anuncio.png"
+                               Aspect="AspectFill"
+                               HeightRequest="80"
+                               WidthRequest="290"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </Frame>
 
                 </StackLayout>
             </Frame>
