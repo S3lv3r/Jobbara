@@ -65,13 +65,15 @@ HorizontalOptions="End"/>
                            HasShadow="True"
                            BorderColor="#FF6A00"
                            BackgroundColor="White">
-                        <Image x:Name="ProfileImage" Source="profile_default.png" Aspect="AspectFill"/>
+                        <Image Source="profile_default.png"
+                               Aspect="AspectFill"/>
                     </Frame>
                     <VerticalStackLayout Spacing="10">
-                        <Label Text="Dato 1" FontSize="18" TextColor="Black" FontAttributes="Bold" x:Name="lblUsuario" />
-                        <Label Text="Dato 2" FontSize="18" TextColor="Black" FontAttributes="Bold" x:Name="lblCorreo" />
-                        <Label Text="Teléfono: pendiente" FontSize="18" TextColor="Black" FontAttributes="Bold" x:Name="Telefono"/>
-                        <Label Text="Rol: pendiente" FontSize="18" TextColor="Black" FontAttributes="Bold" x:Name="Rol"/>
+                        <Label Text="Dato 1" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="Dato 2" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="Dato 3" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="Dato 4" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="Dato 5" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
                     </VerticalStackLayout>
 
                     <!-- Sección para Chambeador -->
@@ -107,8 +109,7 @@ HorizontalOptions="End"/>
                                 BackgroundColor="#FF9B51"
                                 TextColor="White"
                                 CornerRadius="10"
-                                WidthRequest="200"
-                                Clicked="OnEditPerfilClicked"/>
+                                WidthRequest="200"/>
                         <Button Text="Conviértete en Chambeador"
                                 BackgroundColor="DarkOrange"
                                 TextColor="White"

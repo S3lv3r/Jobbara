@@ -23,8 +23,9 @@ public partial class inicioSesion : ContentPage
 
     private async void VerifyUser()
     {
-        var emailInTextBox = emailTxt.Text?.Trim();
-        var passwordInTextBox = passwordTxt.Text?.Trim();
+        var emailInTextBox = emailTxt.Text;
+        var passwordInTextBox = passwordTxt.Text;
+
 
         if (string.IsNullOrWhiteSpace(emailInTextBox) || string.IsNullOrWhiteSpace(passwordInTextBox))
         {
@@ -32,31 +33,21 @@ public partial class inicioSesion : ContentPage
             return;
         }
 
-        List<FirebaseObject<usersModel>> usersDB = null;
-
-        try
-        {
-            usersDB = (await client
-                .Child("Users")
-                .OnceAsync<usersModel>()).ToList();
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Error", $"No se pudo acceder a la base de datos: {ex.Message}", "OK");
-            return;
-        }
+        var usersDB = await client
+            .Child("Users")
+            .OnceAsync<usersModel>();
 
         var matchingEmail = usersDB.FirstOrDefault(u => u.Object.email == emailInTextBox);
 
         if (matchingEmail == null)
         {
-            await DisplayAlert("Error", "No hay una cuenta asociada a ese correo electrónico.", "OK");
+            await DisplayAlert("Error", "No hay una cuanta asociada a ese correo electronico.", "OK");
             return;
         }
 
         if (matchingEmail.Object.password != passwordInTextBox)
         {
-            await DisplayAlert("Error", "Contraseña incorrecta.", "OK");
+            await DisplayAlert("Error", "Contrasena incorrecta.", "OK");
             return;
         }
 
@@ -64,8 +55,7 @@ public partial class inicioSesion : ContentPage
         UserSessionData.email_usd = matchingEmail.Object.email;
         UserSessionData.password_usd = matchingEmail.Object.password;
 
-        await DisplayAlert("Éxito", "Inicio de sesión correctamente.", "OK");
+        await DisplayAlert("Exito", "Inicio de sesion correctamente.", "OK");
         await Shell.Current.GoToAsync("//homePage");
     }
-
 }

@@ -2,18 +2,15 @@ using System.Text.RegularExpressions;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Jobbara.Models;
-
 namespace Jobbara.Pages;
 
 public partial class Registro : ContentPage
 {
     FirebaseClient client = new FirebaseClient("https://jobbara-default-rtdb.firebaseio.com/");
-
     public Registro()
     {
         InitializeComponent();
     }
-
     private async void OnLoginTapped(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//loginPage");
@@ -23,77 +20,61 @@ public partial class Registro : ContentPage
     {
         saveUserData();
     }
-
     private async void saveUserData()
     {
-        string username = userNameTxt.Text?.Trim() ?? "";
-        string email = emailTxt.Text?.Trim().ToLower() ?? "";  // Normalizamos a minúsculas
-        string password = passwordTxt.Text ?? "";
+        string username = userNameTxt.Text?.Trim();
+        string email = emailTxt.Text?.Trim();
+        string password = passwordTxt.Text;
 
-        // Validación básica
+        // 1. Validaci�n b�sica
         if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
         {
             await DisplayAlert("Error", "Por favor, completa todos los campos.", "OK");
             return;
         }
 
-        // Validación de correo electrónico
+        // 2. Validaci�n de correo electr�nico
         if (!IsValidEmail(email))
         {
-            await DisplayAlert("Error", "El correo electrónico no es válido.", "OK");
+            await DisplayAlert("Error", "El correo electronico no es valido.", "OK");
             return;
         }
 
-        // Validación de contraseña
+        // 3. Validaci�n de contrase�a
         if (password.Length < 6)
         {
-            await DisplayAlert("Error", "La contraseña debe tener al menos 6 caracteres.", "OK");
+            await DisplayAlert("Error", "La contrasena debe tener al menos 6 caracteres.", "OK");
             return;
         }
 
-        // Obtener lista de usuarios ya registrados
+        var usernameInTextBox = userNameTxt.Text;
+
         var usersDB = await client
             .Child("Users")
             .OnceAsync<usersModel>();
 
-        // Validar si ya existe el usuario (case insensitive)
-        bool usernameExists = usersDB.Any(u =>
-            !string.IsNullOrEmpty(u.Object.username) &&
-            u.Object.username.Trim().Equals(username, StringComparison.OrdinalIgnoreCase));
+        bool exist = usersDB.Any(u => u.Object.username == usernameInTextBox);
 
-        if (usernameExists)
+        if (exist)
         {
-            await DisplayAlert("Error", "El nombre de usuario ya está en uso.", "OK");
+            await DisplayAlert("Error", "El nombre de usuario ya est� en uso.", "OK");
             return;
         }
 
-        // Validar si ya existe el correo (case insensitive)
-        bool emailExists = usersDB.Any(u =>
-            !string.IsNullOrEmpty(u.Object.email) &&
-            u.Object.email.Trim().ToLower() == email);
-
-        if (emailExists)
-        {
-            await DisplayAlert("Error", "El correo electrónico ya está registrado.", "OK");
-            return;
-        }
-
-        // Guardar nuevo usuario en Firebase
         await client.Child("Users").PostAsync(new usersModel
         {
-            username = username,
-            email = email,
-            password = password,
-            isWorker = false,
+            username = usernameInTextBox,
+            email = emailTxt.Text,
+            password = passwordTxt.Text,
+            isWorking = false,
             office = string.Empty,
             alertWork = false
         });
 
-        await DisplayAlert("Éxito", "Usuario registrado correctamente.", "OK");
+        await DisplayAlert("�xito", "Usuario registrado correctamente.", "OK");
 
         await Shell.Current.GoToAsync("//loginPage");
     }
-
     private bool IsValidEmail(string email)
     {
         if (string.IsNullOrWhiteSpace(email))

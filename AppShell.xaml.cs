@@ -11,7 +11,6 @@
             Routing.RegisterRoute("signPage", typeof(Jobbara.Pages.Registro));
             Routing.RegisterRoute("newChambeador", typeof(Jobbara.Pages.newChambeador));
             Routing.RegisterRoute("homePage", typeof(Jobbara.Pages.homePage));
-            Routing.RegisterRoute("editarPerfil", typeof(Jobbara.Pages.EditarPerfil));
         }
     }
 }
