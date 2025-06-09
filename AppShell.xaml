@@ -28,6 +28,7 @@
 Title="Home"
 ContentTemplate="{DataTemplate pages:homePage}"
 Route="homePage" />
+    <ShellContent Title="editarPerfil" Route="editarPerfil" ContentTemplate="{DataTemplate pages:EditarPerfil}" />
     <ShellContent Title="Solicitar" Route="solicitar" ContentTemplate="{DataTemplate pages:Solicitar}" />
     <ShellContent Title="Ajustes" Route="ajustes" ContentTemplate="{DataTemplate pages:Ajustes}" />
     <ShellContent Title="Pagos" Route="pagos" ContentTemplate="{DataTemplate pages:Pagos}" />
