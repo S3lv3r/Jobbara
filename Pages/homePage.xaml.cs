@@ -1,3 +1,5 @@
+using Jobbara.Models;
+
 namespace Jobbara.Pages;
 
 public partial class homePage : ContentPage
@@ -5,6 +7,12 @@ public partial class homePage : ContentPage
     public homePage()
     {
         InitializeComponent();
+        LoadDataUser();
+    }
+
+    private void LoadDataUser()
+    {
+        usernameLbl.Text = UserSessionData.username_usd;
     }
     private async void OnGoToProfile(object sender, EventArgs e)
     {
@@ -23,5 +31,9 @@ public partial class homePage : ContentPage
     private async void OnGoToNot(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//notificaciones");
+    }
+    private async void GoToChamba(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//chamba");
     }
 }

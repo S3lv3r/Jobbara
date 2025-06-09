@@ -92,11 +92,11 @@ public partial class userProfile : ContentPage
             BecomeWorkerButton.IsVisible = false;
             WorkerDataSection.IsVisible = true;
 
-            OficioLabel.Text = Preferences.Get("Oficio", "No especificado");
-            IneLabel.Text = Preferences.Get("INE", "No especificado");
-            CurpLabel.Text = Preferences.Get("CURP", "No especificado");
-            DomicilioLabel.Text = Preferences.Get("Domicilio", "No especificado");
-            RfcLabel.Text = Preferences.Get("RFC", "No especificado");
+            OficioLabel.Text = UserSessionData.office_usd;
+            IneLabel.Text = UserSessionData.ine_usd ?? "No especificado";
+            CurpLabel.Text = UserSessionData.curp_usd ?? "No especificado";
+            DomicilioLabel.Text = UserSessionData.address_usd ?? "No especificado";
+            RfcLabel.Text = UserSessionData.rfc_usd ?? "No especificado";
         }
         else
         {
@@ -110,14 +110,26 @@ public partial class userProfile : ContentPage
     {
         await Shell.Current.GoToAsync("newChambeador");
     }
+
+    private async void DeletedOffice()
+    {
+        await client
+                    .Child("Users")
+                    .Child(UserSessionData.userKey_usd)
+
+                    .Child("office")
+                    .Child("name")
+                    .DeleteAsync();
+    }
     private void OnDeleteChambeadorData(object sender, EventArgs e)
     {
         Preferences.Remove("IsWorker");
-        Preferences.Remove("Oficio");
-        Preferences.Remove("INE");
-        Preferences.Remove("CURP");
-        Preferences.Remove("Domicilio");
-        Preferences.Remove("RFC");
+        DeletedOffice();
+        UserSessionData.office_usd = string.Empty;
+        UserSessionData.ine_usd = string.Empty;
+        UserSessionData.curp_usd = string.Empty;
+        UserSessionData.address_usd = string.Empty;
+        UserSessionData.rfc_usd = string.Empty;
         DisplayAlert("Datos borrados", "Ya no eres un chambeador, vaquero ??", "OK");
         MostrarDatosChambeador();
     }
@@ -130,5 +142,9 @@ public partial class userProfile : ContentPage
     private async void GoToPagos(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//pagos");
+    }
+    private async void GoToChamba(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//chamba");
     }
 }

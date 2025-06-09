@@ -29,7 +29,7 @@
             </ImageButton>
 
             <Label Grid.Column="1" Text="MiNombre" VerticalOptions="Center"
-           FontAttributes="Bold" FontSize="24" Margin="10,0"/>
+           FontAttributes="Bold" FontSize="24" Margin="10,0" x:Name="usernameLbl"/>
 
             <ImageButton Grid.Column="2" Source="bell.png"
                  WidthRequest="28" HeightRequest="28"
@@ -144,7 +144,8 @@
                 <ImageButton Source="plus.png"
                              BackgroundColor="Transparent"
                              Aspect="AspectFit"
-                             Padding="0"/>
+                             Padding="0"
+                             Clicked="GoToChamba"/>
             </Frame>
 
             <!-- Botón: Ajustes -->

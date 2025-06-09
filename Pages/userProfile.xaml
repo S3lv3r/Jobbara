@@ -174,7 +174,7 @@ HorizontalOptions="End"/>
                              BackgroundColor="Transparent"
                              Aspect="AspectFit"
                              Padding="0"
-                             Clicked="CreateAWorkNotificationClicked"/>
+                             Clicked="GoToChamba"/>
             </Frame>
 
             <!-- Botón: Pagos -->

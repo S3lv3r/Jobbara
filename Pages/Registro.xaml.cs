@@ -61,7 +61,7 @@ public partial class Registro : ContentPage
             return;
         }
 
-        await client.Child("Users").PostAsync(new usersModel
+        var key = await client.Child("Users").PostAsync(new usersModel
         {
             username = usernameInTextBox,
             email = emailTxt.Text,
@@ -70,6 +70,8 @@ public partial class Registro : ContentPage
             office = null,
             alertWork = false
         });
+
+        UserSessionData.userKey_usd = key.Key;
 
         await DisplayAlert("�xito", "Usuario registrado correctamente.", "OK");
 

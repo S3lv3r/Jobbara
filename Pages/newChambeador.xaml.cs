@@ -64,15 +64,16 @@ public partial class newChambeador : ContentPage
 
         await client
             .Child("Users")
-            .Child(UserSessionData.username_usd)
+            .Child(UserSessionData.userKey_usd)
             .Child("office")
             .PutAsync(office);
 
         Preferences.Set("IsWorker", true);
-        Preferences.Set("INE", ine);
-        Preferences.Set("CURP", curp);
-        Preferences.Set("Domicilio", address);
-        Preferences.Set("RFC", rfc);
+        UserSessionData.ine_usd = ine;
+        UserSessionData.curp_usd = curp;
+        UserSessionData.address_usd = address;
+        UserSessionData.rfc_usd = rfc;
+        UserSessionData.office_usd = office.Name;
 
         return true;
     }
