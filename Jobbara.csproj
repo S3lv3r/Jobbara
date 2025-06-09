@@ -66,6 +66,9 @@
   <MauiXaml Update="Pages\Ajustes.xaml">
     <Generator>MSBuild:Compile</Generator>
   </MauiXaml>
+  <MauiXaml Update="Pages\chambaClient.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </MauiXaml>
   <MauiXaml Update="Pages\homePage.xaml">
     <Generator>MSBuild:Compile</Generator>
   </MauiXaml>
