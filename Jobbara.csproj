@@ -75,6 +75,9 @@
   <MauiXaml Update="Pages\mapChamber.xaml">
     <Generator>MSBuild:Compile</Generator>
   </MauiXaml>
+  <MauiXaml Update="Pages\newChamba.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </MauiXaml>
   <MauiXaml Update="Pages\Notificaciones.xaml">
     <Generator>MSBuild:Compile</Generator>
   </MauiXaml>

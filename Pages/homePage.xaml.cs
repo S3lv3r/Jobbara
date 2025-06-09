@@ -24,4 +24,8 @@ public partial class homePage : ContentPage
     {
         await Shell.Current.GoToAsync("//notificaciones");
     }
+    private async void GoToChamba(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//chamba");
+    }
 }

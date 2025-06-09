@@ -149,7 +149,8 @@
                 <ImageButton Source="plus.png"
                              BackgroundColor="Transparent"
                              Aspect="AspectFit"
-                             Padding="0"/>
+                             Padding="0"
+                             Clicked="GoToChamba"/>
             </Frame>
 
             <!-- Botón: Ajustes -->

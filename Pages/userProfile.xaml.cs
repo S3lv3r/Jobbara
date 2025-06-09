@@ -129,4 +129,8 @@ public partial class userProfile : ContentPage
     {
         await Shell.Current.GoToAsync("//pagos");
     }
+    private async void GoToChamba(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//chamba");
+    }
 }

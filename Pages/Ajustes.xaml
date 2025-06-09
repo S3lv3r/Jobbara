@@ -34,66 +34,56 @@ Clicked="OnGoToNot"
 VerticalOptions="Start"
 Margin="0,15,10,0"
 HorizontalOptions="End"/>
+            <!--desde aqui-->
 
             <ScrollView Margin="0,60,0,0">
                 <VerticalStackLayout Padding="20" Spacing="20">
 
                     <Label Text="Ajustes"
-                           FontSize="32"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           Margin="0,20,0,0"/>
+               FontSize="32"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"/>
 
                     <Frame BackgroundColor="#FFF7F2"
-                           BorderColor="#FF9B51"
-                           CornerRadius="15"
-                           Padding="15"
-                           HasShadow="True">
+               BorderColor="#FF9B51"
+               CornerRadius="15"
+               Padding="15"
+               HasShadow="True">
                         <VerticalStackLayout Spacing="15">
                             <Label Text="Cuenta"
-                                   FontSize="20"
-                                   FontAttributes="Bold"
-                                   TextColor="#FF6A00"/>
-                            <Button Text="Editar Perfil"
-                                    BackgroundColor="#FF9B51"
-                                    TextColor="White"
-                                    CornerRadius="10"/>
-                            <Button Text="Cambiar Contraseña"
-                                    BackgroundColor="#FF9B51"
-                                    TextColor="White"
-                                    CornerRadius="10"/>
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#FF6A00"/>
+                            <Button Text="Cerrar Sesión"
+                        BackgroundColor="#FF9B51"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnCerrarSesion"/>
+                            <Button Text="Borrar Cuenta"
+                        BackgroundColor="#FF9B51"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnBorrarCuenta"/>
                         </VerticalStackLayout>
                     </Frame>
 
                     <Frame BackgroundColor="#FFF7F2"
-                           BorderColor="#FF9B51"
-                           CornerRadius="15"
-                           Padding="15"
-                           HasShadow="True">
-                        <VerticalStackLayout Spacing="15">
-                            <Label Text="Notificaciones"
-                                   FontSize="20"
-                                   FontAttributes="Bold"
-                                   TextColor="#FF6A00"/>
-                            <Switch IsToggled="True"/>
-                        </VerticalStackLayout>
-                    </Frame>
-
-                    <Frame BackgroundColor="#FFF7F2"
-                           BorderColor="#FF9B51"
-                           CornerRadius="15"
-                           Padding="15"
-                           HasShadow="True">
+               BorderColor="#FF9B51"
+               CornerRadius="15"
+               Padding="15"
+               HasShadow="True">
                         <VerticalStackLayout Spacing="15">
                             <Label Text="Extras"
-                                   FontSize="20"
-                                   FontAttributes="Bold"
-                                   TextColor="#FF6A00"/>
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#FF6A00"/>
                             <Button Text="Free Moiney"
-                                    BackgroundColor="DarkOrange"
-                                    TextColor="White"
-                                    CornerRadius="10"/>
+                        BackgroundColor="DarkOrange"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnFreeMoiney"/>
                         </VerticalStackLayout>
                     </Frame>
 
@@ -101,7 +91,7 @@ HorizontalOptions="End"/>
             </ScrollView>
         </Grid>
 
-        <!-- Barra de navegación inferior (igual que en userProfile) -->
+        <!-- Hasta aca-->
         <Grid Grid.Row="1"
               BackgroundColor="#F0F0F0"
               Padding="10"
@@ -145,7 +135,8 @@ HorizontalOptions="End"/>
                 <ImageButton Source="plus.png"
                              BackgroundColor="Transparent"
                              Aspect="AspectFit"
-                             Padding="0"/>
+                             Padding="0"
+                             Clicked="GoToChamba"/>
             </Frame>
 
             <!-- Botón: Pagos -->
