@@ -1,17 +1,27 @@
 ﻿using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Maui;
+using Firebase.Database;
 using System.Text.RegularExpressions;
+using Jobbara.Models;
 namespace Jobbara.Pages;
 
 public partial class newChambeador : ContentPage
 {
     private bool areTermsVisible = false;
+    FirebaseClient client = new FirebaseClient("https://jobbara-default-rtdb.firebaseio.com/");
+    public List<officeModel> officesList { get; set; }
 
     public newChambeador()
     {
         InitializeComponent();
+        BindingContext = this;
     }
 
+    public void LoadOffices() // Cargar los oficios en el picker
+    {
+        var offices = client.Child("Offices").OnceAsync<officeModel>();
+        officesList = offices.Result.Select(x => x.Object).ToList();
+    }
     // Mostrar/Ocultar términos
     private void OnToggleTermsClicked(object sender, EventArgs e)
     {
@@ -26,13 +36,13 @@ public partial class newChambeador : ContentPage
         TermsCheck.IsChecked = !TermsCheck.IsChecked;
     }
 
-    // Función para guardar datos en Preferences
-    private bool GuardarDatosLocal()
+    
+    private bool GuardarDatosLocal() // Función para guardar datos en Preferences
     {
         string curp = CurpEntry.Text?.Trim().ToUpper() ?? "";
         string rfc = RfcEntry.Text?.Trim().ToUpper() ?? "";
         string ine = IneEntry.Text?.Trim().ToUpper() ?? "";
-        string job = JobEntry.Text?.Trim() ?? "";
+        //string job = JobEntry.Text?.Trim() ?? "";
         string address = AddressEntry.Text?.Trim() ?? "";
 
         // Expresiones regulares
@@ -41,7 +51,7 @@ public partial class newChambeador : ContentPage
         string inePattern = @"^[A-Z0-9]{18}$";
 
         // Validación general
-        if (string.IsNullOrWhiteSpace(job) ||
+        if (string.IsNullOrWhiteSpace(curp) ||
             string.IsNullOrWhiteSpace(address) ||
             !Regex.IsMatch(curp, curpPattern) ||
             !Regex.IsMatch(rfc, rfcPattern) ||
@@ -52,7 +62,7 @@ public partial class newChambeador : ContentPage
         }
 
         Preferences.Set("IsWorker", true);
-        Preferences.Set("Oficio", JobEntry.Text);
+        //Preferences.Set("Oficio", JobEntry.Text);
         Preferences.Set("INE", IneEntry.Text);
         Preferences.Set("CURP", CurpEntry.Text);
         Preferences.Set("Domicilio", AddressEntry.Text);
@@ -60,6 +70,8 @@ public partial class newChambeador : ContentPage
         return true;
     }
     // Solo guardar datos (quedarse en la misma página)
+
+
     private async void OnSaveClicked(object sender, EventArgs e)
     {
         bool datosValidos = GuardarDatosLocal();
@@ -74,6 +86,8 @@ public partial class newChambeador : ContentPage
     }
 
     // Guardar + regresar al perfil
+
+
     private async void OnConfirmClicked(object sender, EventArgs e)
     {
         if (!TermsCheck.IsChecked)

@@ -13,7 +13,10 @@
             <Label Text="Conviértete en Chambeador" FontSize="26" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
 
             <!-- Campos -->
-            <Entry Placeholder="Oficio" x:Name="JobEntry" TextColor="Black"/>
+            <Picker Title="Seleccionar oficio"
+                    ItemsSource="{Binding officeModel}"
+                    ItemDisplayBinding="{Binding Name}"
+                    x:Name="officePicker"/>
             <Entry Placeholder="INE" x:Name="IneEntry" TextColor="Black"/>
             <Entry Placeholder="CURP" x:Name="CurpEntry" TextColor="Black" />
             <Entry Placeholder="Comprobante de domicilio" x:Name="AddressEntry" TextColor="Black"/>
