@@ -34,6 +34,8 @@ public partial class userProfile : ContentPage
         usernameLbl.Text = UserSessionData.username_usd;
     }
     FirebaseClient client = new FirebaseClient("https://jobbara-default-rtdb.firebaseio.com/"); // Referencia a la base de datos
+
+
     private async void CreateAWorkNotificationClicked(object sender, EventArgs e)
     {
         var users = await client
@@ -42,11 +44,13 @@ public partial class userProfile : ContentPage
 
         foreach (var user in users)
         {
-            if (user.Object.availableWork && user.Object.office == "carpintero")
+
+            if (user.Object.isWorking)
             {
                 await client
                     .Child("Users")
                     .Child(user.Key)
+
                     .Child("alertWork")
                     .PutAsync(true);
             }
@@ -56,7 +60,8 @@ public partial class userProfile : ContentPage
     public async Task OnListeningAlert()
     {
 
-        while(true)
+        while (true)
+
         {
             var users = await client
                 .Child("Users")
@@ -65,6 +70,7 @@ public partial class userProfile : ContentPage
             var userCurrent = users.FirstOrDefault(u => u.Object.username == UserSessionData.username_usd);
 
             if (userCurrent != null)
+
             {
                 var alertWork = userCurrent.Object.alertWork;
                 if (alertWork == true)
@@ -76,11 +82,6 @@ public partial class userProfile : ContentPage
             await Task.Delay(1000);
         }
     }
-
-
-
-
-    /// CODIGO QUE TODAVIA NO REVISO 
     private void MostrarDatosChambeador()
     {
         bool isWorker = Preferences.Get("IsWorker", false);

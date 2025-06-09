@@ -36,9 +36,6 @@
                          Clicked="OnGoToNot"
                  BackgroundColor="Transparent"/>
         </Grid>
-
-
-        <!-- 📦 Recuadro blanco con reseñas -->
         <Frame Grid.Row="1"
                CornerRadius="20"
                BackgroundColor="White"

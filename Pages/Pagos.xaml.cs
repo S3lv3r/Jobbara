@@ -2,10 +2,10 @@ namespace Jobbara.Pages;
 
 public partial class Pagos : ContentPage
 {
-	public Pagos()
-	{
-		InitializeComponent();
-	}
+    public Pagos()
+    {
+        InitializeComponent();
+    }
     private async void OnGoToHome(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//homePage");

@@ -2,10 +2,10 @@ namespace Jobbara.Pages;
 
 public partial class Ajustes : ContentPage
 {
-	public Ajustes()
-	{
-		InitializeComponent();
-	}
+    public Ajustes()
+    {
+        InitializeComponent();
+    }
     private async void OnGoToHome(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//homePage");
