@@ -120,7 +120,8 @@ shell:Shell.NavBarIsVisible="False"
                 <ImageButton Source="plus.png"
                              BackgroundColor="Transparent"
                              Aspect="AspectFit"
-                             Padding="0"/>
+                             Padding="0"
+                             />
             </Frame>
 
             <!-- Pagos -->

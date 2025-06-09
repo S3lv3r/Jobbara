@@ -145,6 +145,6 @@ public partial class userProfile : ContentPage
     }
     private async void GoToChamba(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//chamba");
+        await Shell.Current.GoToAsync("//chambaclient");
     }
 }

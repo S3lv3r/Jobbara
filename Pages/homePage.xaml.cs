@@ -6,14 +6,9 @@ public partial class homePage : ContentPage
 {
     public homePage()
     {
-        InitializeComponent();
-        LoadDataUser();
+        InitializeComponent(); 
     }
 
-    private void LoadDataUser()
-    {
-        usernameLbl.Text = UserSessionData.username_usd;
-    }
     private async void OnGoToProfile(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//userProfile");
@@ -34,6 +29,6 @@ public partial class homePage : ContentPage
     }
     private async void GoToChamba(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//chamba");
+        await Shell.Current.GoToAsync("//chambaclient");
     }
 }

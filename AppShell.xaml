@@ -25,15 +25,16 @@
         ContentTemplate="{DataTemplate pages:Registro}"
         Route="signPage" />
     <ShellContent
-Title="Home"
-ContentTemplate="{DataTemplate pages:homePage}"
-Route="homePage" />
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:homePage}"
+        Route="homePage" /> 
     <ShellContent Title="Solicitar" Route="solicitar" ContentTemplate="{DataTemplate pages:Solicitar}" />
     <ShellContent Title="Ajustes" Route="ajustes" ContentTemplate="{DataTemplate pages:Ajustes}" />
     <ShellContent Title="Pagos" Route="pagos" ContentTemplate="{DataTemplate pages:Pagos}" />
     <ShellContent Title="Notificaciones" Route="notificaciones" ContentTemplate="{DataTemplate pages:Notificaciones}"/>
     <ShellContent Title="Mapa" Route="mapa" ContentTemplate="{DataTemplate pages:mapChamber}"/>
     <ShellContent Title="Chamba" Route="chamba" ContentTemplate="{DataTemplate pages:newChamba}"/>
+    <ShellContent Title="chambaClient" Route="chambaclient" ContentTemplate="{DataTemplate pages:chambaClient}"/>
 
 
 </Shell>

@@ -61,6 +61,7 @@
                                 </Image.Clip>
                             </Image>
 
+
                             <VerticalStackLayout Grid.Column="1" Margin="10,0">
                                 <Label Text="Carlos Rivera" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
                                 <Label Text="Volveré sin duda." FontSize="13" TextColor="Gray"/>
@@ -71,8 +72,12 @@
                     <!-- Reseña 2 -->
                     <Frame BackgroundColor="#EEEEEE" CornerRadius="12" Padding="10" HasShadow="False">
                         <Grid ColumnDefinitions="Auto,*">
-                            <Image Source="aqui_va_algo2.png" WidthRequest="40" HeightRequest="40"
-                                   Clip="EllipseGeometry Center=20,20 RadiusX=20 RadiusY=20"/>
+                            <Image Source="aqui_va_algo3.png" WidthRequest="40" HeightRequest="40">
+                                <Image.Clip>
+                                    <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
+                                </Image.Clip>
+                            </Image>
+
 
                             <VerticalStackLayout Grid.Column="1" Margin="10,0">
                                 <Label Text="Ana Gómez" FontAttributes="Bold" FontSize="14" TextColor="Black"/>

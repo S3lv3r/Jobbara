@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Jobbara.Models;
@@ -23,39 +22,48 @@ public partial class inicioSesion : ContentPage
 
     private async void VerifyUser()
     {
-        var emailInTextBox = emailTxt.Text;
-        var passwordInTextBox = passwordTxt.Text;
-
-
-        if (string.IsNullOrWhiteSpace(emailInTextBox) || string.IsNullOrWhiteSpace(passwordInTextBox))
+        try
         {
-            await DisplayAlert("Error", "Por favor, completa ambos campos.", "OK");
-            return;
+            var emailInTextBox = emailTxt.Text;
+            var passwordInTextBox = passwordTxt.Text;
+
+            if (string.IsNullOrWhiteSpace(emailInTextBox) || string.IsNullOrWhiteSpace(passwordInTextBox))
+            {
+                await DisplayAlert("Error", "Por favor, completa ambos campos.", "OK");
+                return;
+            }
+
+            var usersDB = await client
+                .Child("Users")
+                .OnceAsync<usersModel>();
+
+            var matchingEmail = usersDB.FirstOrDefault(u => u.Object.email == emailInTextBox);
+
+            if (matchingEmail == null)
+            {
+                await DisplayAlert("Error", "No hay una cuenta asociada a ese correo electrónico.", "OK");
+                return;
+            }
+
+            if (matchingEmail.Object.password != passwordInTextBox)
+            {
+                await DisplayAlert("Error", "Contraseña incorrecta.", "OK");
+                return;
+            }
+
+            UserSessionData.username_usd = matchingEmail.Object.username;
+            UserSessionData.email_usd = matchingEmail.Object.email;
+            UserSessionData.password_usd = matchingEmail.Object.password;
+            UserSessionData.userKey_usd = matchingEmail.Key;
+            UserSessionData.office_usd = matchingEmail.Object.office?.Name ?? "No especificado";
+
+            await DisplayAlert("Éxito", "Inicio de sesión correcto.", "OK");
+            await Shell.Current.GoToAsync("//ajustes");
         }
-
-        var usersDB = await client
-            .Child("Users")
-            .OnceAsync<usersModel>();
-
-        var matchingEmail = usersDB.FirstOrDefault(u => u.Object.email == emailInTextBox);
-
-        if (matchingEmail == null)
+        catch (Exception ex)
         {
-            await DisplayAlert("Error", "No hay una cuanta asociada a ese correo electronico.", "OK");
-            return;
+            await DisplayAlert("Error inesperado", ex.Message, "OK");
         }
-
-        if (matchingEmail.Object.password != passwordInTextBox)
-        {
-            await DisplayAlert("Error", "Contrasena incorrecta.", "OK");
-            return;
-        }
-
-        UserSessionData.username_usd = matchingEmail.Object.username;
-        UserSessionData.email_usd = matchingEmail.Object.email;
-        UserSessionData.password_usd = matchingEmail.Object.password;
-
-        await DisplayAlert("Exito", "Inicio de sesion correctamente.", "OK");
-        await Shell.Current.GoToAsync("//homePage");
     }
+
 }

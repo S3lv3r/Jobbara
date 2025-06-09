@@ -17,5 +17,7 @@ namespace Jobbara.Models
         public static string rfc_usd { get; set; }
         public static string curp_usd { get; set; }
         public static string address_usd { get; set; }
+
+        
     }
 }
