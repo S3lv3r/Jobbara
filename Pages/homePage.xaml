@@ -19,7 +19,7 @@
 
         <!-- 🧢 Header -->
         <Grid ColumnDefinitions="Auto,*,Auto" Row="0" Padding="20">
-            <ImageButton Source="usuario.png" WidthRequest="40" HeightRequest="40"
+            <ImageButton x:Name="ImgPerfil" Source="usuario.png" WidthRequest="40" HeightRequest="40"
            Aspect="AspectFill"
            VerticalOptions="Center"
                          Clicked="OnGoToProfile">

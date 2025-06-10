@@ -62,21 +62,36 @@ public partial class newChambeador : ContentPage
 
         officeModel office = officePicker.SelectedItem as officeModel;
 
-        await client
-            .Child("Users")
-            .Child(UserSessionData.userKey_usd)
-            .Child("office")
-            .PutAsync(office);
+        string email = UserSessionData.email_usd;
+        string safeKey = email.Replace(".", "_");
 
-        Preferences.Set("IsWorker", true);
+        var chambeador = new
+        {
+            curp = curp,
+            rfc = rfc,
+            ine = ine,
+            domicilio = address,
+            oficio = office.Name,
+            isWorker = true,
+            alertWork = false
+        };
+
+        await client
+            .Child("Chambeadores")
+            .Child(safeKey)
+            .PutAsync(chambeador);
+
+        // Guardar en sesión
         UserSessionData.ine_usd = ine;
         UserSessionData.curp_usd = curp;
         UserSessionData.address_usd = address;
         UserSessionData.rfc_usd = rfc;
         UserSessionData.office_usd = office.Name;
 
+
         return true;
     }
+
 
     private async void OnGuardarYConfirmarClicked(object sender, EventArgs e)
     {

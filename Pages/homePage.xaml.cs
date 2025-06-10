@@ -9,6 +9,33 @@ public partial class homePage : ContentPage
         InitializeComponent();
         LoadDataUser();
     }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        CargarImagenPerfil();
+    }
+
+    private void CargarImagenPerfil()
+    {
+        try
+        {
+            string clave = UserSessionData.email_usd.Replace(".", "_").ToLower();
+            string rutaImagen = Preferences.Get($"user_profile_image_{clave}", string.Empty);
+
+            if (!string.IsNullOrEmpty(rutaImagen) && File.Exists(rutaImagen))
+            {
+                ImgPerfil.Source = ImageSource.FromFile(rutaImagen);
+            }
+            else
+            {
+                ImgPerfil.Source = "usuario.png"; // Imagen por defecto si no hay imagen guardada
+            }
+        }
+        catch
+        {
+            ImgPerfil.Source = "usuario.png"; // Por si falla algo
+        }
+    }
     private void LoadDataUser()
     {
         usernameLbl.Text = UserSessionData.username_usd;
