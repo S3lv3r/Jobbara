@@ -40,6 +40,6 @@
     <ShellContent Title="Mapa" Route="mapa" ContentTemplate="{DataTemplate pages:mapChamber}"/>
     <ShellContent Title="Chamba" Route="chamba" ContentTemplate="{DataTemplate pages:newChamba}"/>
     <ShellContent Title="chambaClient" Route="chambaclient" ContentTemplate="{DataTemplate pages:chambaClient}"/>
-
+    <ShellContent Title="editarPerfil" Route="editarPerfil" ContentTemplate="{DataTemplate pages:EditarPerfil}" />
 
 </Shell>
